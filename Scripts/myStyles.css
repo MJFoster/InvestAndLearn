@@ -1,0 +1,25 @@
+.white-text {
+    color: white !important;
+}
+
+.purple-text {
+    color: mediumpurple;
+}
+
+.dark-purple-text {
+    color: rebeccapurple;
+}
+
+.gold-text {
+    color: goldenrod;
+}
+
+.banner {
+    background-color: mediumpurple;
+    border: 3px solid black;
+}
+
+.logo {
+    float: left;
+
+}
