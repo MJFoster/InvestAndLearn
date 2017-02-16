@@ -20,6 +20,16 @@
 }
 
 .logo {
+    width: 10%;
     float: left;
 
+}
+
+.banner-text {
+    width: 35%;
+    float: left;
+}
+
+.banner-nav {
+    width: 40%;
 }
