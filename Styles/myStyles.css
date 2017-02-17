@@ -15,21 +15,35 @@
 }
 
 .banner {
+    width:  100%;
     background-color: mediumpurple;
-    border: 3px solid black;
+    border: 2px solid black;
+    float: left;
 }
 
-.logo {
-    width: 10%;
+.banner-logo {
+    width: 90px;
+    height: 75px;
+    margin-left: 1%;
     float: left;
-
+    background-color: transparent;
 }
 
 .banner-text {
-    width: 35%;
+    width: 30%;
+    margin: 1% 0% 1% 10%;
+    padding-left: 5%;
+    font-family: "Lucida Bright", Cambria, serif;
+    font-weight: 600;
+    font-size: 36px;
     float: left;
 }
 
 .banner-nav {
-    width: 40%;
+    width: 25%;
+    margin: 0% 1% 2% 0%;
+    padding-bottom: 2%;
+    float: right;
+    text-align: right;
+
 }
