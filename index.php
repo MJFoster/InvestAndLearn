@@ -1,6 +1,4 @@
 <?php
-	include_once 'index.html';
-	// $value = 25*6;
-	// echo "<br><br>"."Hello from php!"."<br>"."I'm in InvestAndLearn.net!!!";
-	// echo "<br>".$value;
+    include "header.php";
+    include "footer.php";
 ?>

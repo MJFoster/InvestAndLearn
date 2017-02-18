@@ -1,12 +1,8 @@
 <html>
 <!--
 	 TODO:  
-	 	* Increase size of banner-nav
-		* Fix wire frame 'Contact Us' menu ... top left.
-		* How to get links to STAY original color, not change after selected once?
 		* Finish <all></all> page markups
-		* Fix 'float' issues
-		* Select logo image
+		* Add $$$ to logo image
 -->
 
 <head>
@@ -18,21 +14,23 @@
 		<img class="banner-logo" src="Images/GradCap_Silhouette - Goldenrod.png" alt="Graduation Cap">
 
 		<div class="banner-text white-text">Invest And Learn!</div>
-		<nav class="banner-nav white-text">
+		<nav class="banner-nav nav-fonts white-text">
 			<a href="#" class="white-text">Contact Us | </a>
 			<a href="#" class="white-text">About Us | </a>
 			<a href="#" class="secure gold-text">Member Login</a>
 		</nav>
 	</div>
 
-	<div class="main-nav-menu purple-text">
-
+	<div class="main-menu-nav nav-fonts dark-purple-text">
+			<a href="#">Home | </a>
+			<a href="#" class="purple-text">Learn | </a>
+			<a href="#" class="purple-text">Events Calendar | </a>
+			<a href="#" class="purple-text">Blog</a>
 	</div>
 
 </header>
 
 <body>
+<?php
 
-</body>
-
-</html>
+?>
