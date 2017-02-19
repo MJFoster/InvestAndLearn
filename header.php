@@ -1,36 +1,31 @@
 <html>
-<!--
-	 TODO:  
-		* Finish <all></all> page markups
-		* Add $$$ to logo image
--->
 
 <head>
 	<title>InvestAndLearn.net</title>
 	<link rel="stylesheet" type="text/css" href="Styles/myStyles.css">
 </head>
 <header>
-	<div class="banner">
-		<img class="banner-logo" src="Images/GradCap_Silhouette - Goldenrod.png" alt="Graduation Cap">
+	<div id="banner" class="dark-purple-background">
+		<img id="banner-logo" src="Images/GradCap_Silhouette - Goldenrod.png">
 
-		<div class="banner-text white-text">Invest And Learn!</div>
-		<nav class="banner-nav nav-fonts white-text">
-			<a href="#" class="white-text">Contact Us | </a>
-			<a href="#" class="white-text">About Us | </a>
-			<a href="#" class="secure gold-text">Member Login</a>
+		<div id="banner-text" class="white-text">Invest And Learn!</div>
+		<nav id="banner-nav" class="nav-fonts white-text">
+			<a href="#" class="white-text" alt="Contact Us">Contact Us | </a>
+			<a href="#" class="white-text" alt="About Us">About Us | </a>
+			<a href="#" class="secure gold-text" alt="Member Login">Member Login</a>
 		</nav>
 	</div>
 
-	<div class="main-menu-nav nav-fonts dark-purple-text">
-			<a href="#">Home | </a>
-			<a href="#" class="purple-text">Learn | </a>
-			<a href="#" class="purple-text">Events Calendar | </a>
-			<a href="#" class="purple-text">Blog</a>
+	<div id="main-menu-nav" class="nav-fonts dark-purple-text">
+			<a href="#" alt="Home">Home | </a>
+			<a href="#" class="purple-text" alt="Learn To Invest">Learn | </a>
+			<a href="#" class="purple-text" alt="Calendar">Events Calendar | </a>
+			<a href="#" class="purple-text" alt="Blog">Blog</a>
 	</div>
 
 </header>
 
 <body>
-<?php
+	<div id="main-content" class="black-text">
 
-?>
+	</div>
