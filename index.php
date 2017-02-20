@@ -1,7 +1,5 @@
 <!--
 	 TODO:  
-		* Add favicon to title tab
-		* Add footer icons & copyright icon
 		* Scale main menu better ... place in <ul> or <div> ???
 		* Move pages into "Pages" folder & re-direct references
 		* Add modals for contactUs, memberLogin, adminLogin
@@ -17,7 +15,7 @@
 ?>
 
 <div id="main-content" class="black-text">
-    In The HOME Page!
+    In The Home Page!
 </div>
 
 <?php

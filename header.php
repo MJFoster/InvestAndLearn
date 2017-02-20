@@ -1,9 +1,10 @@
 <html>
 
 <head>
-	<title>InvestAndLearn.net</title>
+	<title>Invest And Learn</title>
 	<link rel="stylesheet" type="text/css" href="Styles/myStyles.css">
 	<link rel="stylesheet" href="Styles/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="icon" type="image/x-icon" href="Images/favicon.png">
 </head>
 <header>
 	<div id="banner" class="dark-purple-background">
