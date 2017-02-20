@@ -16,12 +16,12 @@
 		</nav>
 	</div>
 
-	<div id="main-menu-nav" class="nav-fonts dark-purple-text">
-			<a href="#" alt="Home">Home | </a>
-			<a href="#" class="purple-text" alt="Learn To Invest">Learn | </a>
-			<a href="#" class="purple-text" alt="Calendar">Events Calendar | </a>
-			<a href="#" class="purple-text" alt="Blog">Blog</a>
-	</div>
+	<nav id="main-menu-nav" class="nav-fonts">
+		<a href="#" class="dark-purple-text" alt="Home">Home | </a>
+		<a href="#" class="dark-purple-text" alt="Learn To Invest">Learn | </a>
+		<a href="#" class="dark-purple-text" alt="Calendar">Events Calendar | </a>
+		<a href="#" class="dark-purple-text" alt="Blog">Blog</a>
+	</nav>
 
 </header>
 
