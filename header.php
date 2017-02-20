@@ -3,17 +3,16 @@
 <head>
 	<title>InvestAndLearn.net</title>
 	<link rel="stylesheet" type="text/css" href="Styles/myStyles.css">
-
+	<link rel="stylesheet" href="Styles/font-awesome-4.7.0/css/font-awesome.min.css">
 </head>
 <header>
 	<div id="banner" class="dark-purple-background">
-		<img id="banner-logo" src="Images/GradCap_Silhouette - Goldenrod.png">
-
+		<i id="banner-logo" class="fa fa-graduation-cap fa-5x"></i>
 		<div id="banner-text" class="white-text">Invest And Learn!</div>
 		<nav id="banner-nav" class="nav-fonts white-text">
 			<a href="#" class="white-text" alt="Contact Us">Contact Us | </a>
 			<a href="aboutUs.php" class="white-text" alt="About Us">About Us | </a>
-			<a href="#" class="secure gold-text" alt="Member Login">Member Login</a>
+			<a href="#" class="secure gold-text" alt="Member Login"><i class="fa fa-lock"></i> Member Login</a>
 		</nav>
 	</div>
 

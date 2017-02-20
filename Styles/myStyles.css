@@ -64,11 +64,12 @@ nav a {
     margin-left: 1%;
     float: left;
     background-color: transparent;
+    color: goldenrod;
 }
 
 #banner-text {
     width: 30%;
-    margin: 0.5% 0% 1% 15%;
+    margin: 0.5% 0% 1% 19%;
     font-family: "Lucida Bright", Cambria, serif;
     font-weight: 600;
     font-size: 36px;
@@ -113,11 +114,12 @@ footer {
 }
 
 #copyright {
-    padding: 0.5% 0%;
+    padding: 0.75% 0%;
     width: 20%;
     color: white;
     margin-left: 1%;
     float: left;
+    font-size: 75%;
 }
 
 #footer-nav {
