@@ -3,6 +3,7 @@
 <head>
 	<title>InvestAndLearn.net</title>
 	<link rel="stylesheet" type="text/css" href="Styles/myStyles.css">
+
 </head>
 <header>
 	<div id="banner" class="dark-purple-background">
@@ -11,21 +12,18 @@
 		<div id="banner-text" class="white-text">Invest And Learn!</div>
 		<nav id="banner-nav" class="nav-fonts white-text">
 			<a href="#" class="white-text" alt="Contact Us">Contact Us | </a>
-			<a href="#" class="white-text" alt="About Us">About Us | </a>
+			<a href="aboutUs.php" class="white-text" alt="About Us">About Us | </a>
 			<a href="#" class="secure gold-text" alt="Member Login">Member Login</a>
 		</nav>
 	</div>
 
 	<nav id="main-menu-nav" class="nav-fonts">
-		<a href="#" class="dark-purple-text" alt="Home">Home | </a>
-		<a href="#" class="dark-purple-text" alt="Learn To Invest">Learn | </a>
-		<a href="#" class="dark-purple-text" alt="Calendar">Events Calendar | </a>
-		<a href="#" class="dark-purple-text" alt="Blog">Blog</a>
+		<a href="index.php" class="dark-purple-text" alt="Home">Home | </a>
+		<a href="learn.php" class="dark-purple-text" alt="Learn To Invest">Learn | </a>
+		<a href="calendar.php" class="dark-purple-text" alt="Calendar">Events Calendar | </a>
+		<a href="blog.php" class="dark-purple-text" alt="Blog">Blog</a>
 	</nav>
 
 </header>
 
 <body>
-	<div id="main-content" class="black-text">
-
-	</div>
