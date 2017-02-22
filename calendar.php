@@ -3,7 +3,7 @@
     $thisPage = "Calendar-Page";
 ?>
 
-<div class="main-content black-text">
+<div class="main-content dark-purple-text">
     <table id="calendar" class="purple-background">
         <tr>
             <th>Sunday</th>
@@ -29,6 +29,7 @@
                     echo "</tr>";
                 }
             ?>
+    </table>
 </div>
 
 <?php
