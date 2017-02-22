@@ -12,8 +12,9 @@
     color: rebeccapurple;
 }
 
-.gold-text {
-    color: goldenrod;
+.cyan-text {
+    /*color: #05EAFA;*/
+    color: #11CFFA;
 }
 
 .black-text {
@@ -21,15 +22,16 @@
 }
 
 .purple-background {
-    background-color: mediumpurple;
+    background-color: #F0E6FA;
 }
 
 .dark-purple-background {
     background-color: rebeccapurple;
 }
 
-.gold-background {
-    background-color: goldenrod;
+.cyan-background {
+    /*color: #05EAFA;*/
+    background-color: #11CFFA;
 }
 
 .nav-fonts {
@@ -44,10 +46,26 @@ nav a {
     border: 3px solid black;
 }
 
-#main-content {
+.main-content {
     width: 100%;
     height: 78%;
     border: 1px solid black;
+}
+
+.main-content ul {
+    width: 50%;
+    margin-left: 25%;
+    padding: 0.1% 2% 1% 2%;
+    list-style: none;
+}
+
+.main-content li h3 {
+    margin-bottom: 0.5%;
+}
+
+.main-content li p {
+    padding: 0% 5%;
+    margin: 0.5%;
 }
 
 #current-page {
@@ -68,7 +86,6 @@ nav a {
     margin-left: 1%;
     float: left;
     background-color: transparent;
-    color: goldenrod;
 }
 
 #banner-text {
@@ -101,6 +118,15 @@ nav a {
 /* * * * * * * Member Login Modal * * * * * * */
 
 /* * * * * * * About Us Page * * * * * * */
+#about-us-container {
+    width: 40%;
+    margin: 5% 30%;
+}
+
+#about-us-container div {
+    font-weight: 800;
+    font-size: 200%;
+}
 
 /* * * * * * * Home Page * * * * * * */
 #home-page-image {
@@ -114,7 +140,7 @@ nav a {
     padding: 2% 2% 2% 62%;
     width: 36%;
     height: 75%;
-    border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 #testimonials-button {
@@ -122,18 +148,83 @@ nav a {
     font-weight: 600;
     margin-left: 76%;
     display: block;
-    margin-top: 2%;
 }
 
 #testimonials-button a {
     text-decoration: none;
 }
 
+/* * * * * * * Testimonials Page * * * * * * */
+.testimonials-text {
+    text-align: justify;
+    font-style: italic;
+}
+
+.testimonials-name {
+    text-align: right;
+    padding-right: 5%;
+}
+
 /* * * * * * * Learn Page * * * * * * */
+#learn-container {
+    margin: 5% 0%;
+}
+
+#learn-container div {
+    font-weight: 800;
+    font-size: 200%;
+    text-align: center;
+}
+
+#learn-container ul {
+    width: 100%;
+    margin: 2% 10%;
+}
+
+#learn-container li {
+    float: left;
+    border: 1px solid black;
+    height: 25%;
+    width: 15%;
+    margin: 2% 5%;
+}
 
 /* * * * * * * Calendar Page * * * * * * */
+#calendar {
+    width: 100%;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+#calendar th, #calendar td {
+    width: 14%;
+    height: 75px;
+    border: 1px solid black;
+}
+
+#calendar td {
+    text-align: right;
+    vertical-align: text-top;
+}
 
 /* * * * * * * Blog Page * * * * * * */
+#blog-container div {
+    width: 50%;
+    padding: 5% 0% 0% 25%;
+    font-weight: 800;
+    font-size: 200%;
+}
+
+#blog-text {
+    height: 20%;
+    overflow: auto;
+}
+
+#blog-author {
+    text-align: right;
+    padding-right: 5%;
+}
+
 
 /* * * * * * * Footer * * * * * * */
 footer {
