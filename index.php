@@ -26,7 +26,7 @@
 				visitors to learn more about saving, growing, and investing money purposefully.
 			</p>
 		</div>
-		<button id="testimonials-button" class="cyan-background dark-purple-text"><a href="testimonials"><i class="fa fa-play"></i> Testimonials</a></button>
+		<button id="testimonials-button" class="cyan-background dark-purple-text"><a href="testimonials.php"><i class="fa fa-play"></i> Testimonials</a></button>
 	</div>
 
 </div>
