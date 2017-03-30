@@ -2,21 +2,24 @@
 /*
 * Data Access Object to connect to a given database with, and
 * provide functions to read/save data from/to database.  All
-* database access attempts are logged in a text file.
+* database access attempts are logged in a text file using 'KLogger' class.
 */
 
 require_once 'KLogger.php';
 
 class Dao {
 
-  private $host = "localhost:2222";
+  // private $host = "localhost:2222";
+  private $host = "localhost";
   private $db = "InvestAndLearn";
   private $user = "mjfoster";
   private $pass = "password";
   private $log;
+  private $ADMIN_ACCESS = 1;
+  private $USER_ACCESS = 0;
 
   public function __construct () {
-    $this->log = new KLogger ("tmp/log.txt" , KLogger::WARN);
+    $this->log = new KLogger ("tmp/log.txt" , KLogger::DEBUG);
   }
 
   public function getConnection () {
@@ -32,29 +35,34 @@ class Dao {
     return $conn;
   } 
 
-  /* 
-  * Searches 'user' table for given user.
-  * If found, return user_id, else return 0.
+  /*
+  * Searches 'user' table for given email/password combo.
+  * If found, return 'access', else return -1.
   */
-  public int function findUser ($email) {
-    $result = 0;  // TODO:  Initialization needed???
-    $this->log->LogInfo("findUser: Searching for user in database...");
-    $conn = $this->getConnection();
-    $queryString = "select user_id from User where Email=" . $email;
-    $result = $conn->query($queryString); // TODO:  Confirm return valaue here
-    if($result > 0) {
-      $this->log->LogInfo("findUser: User FOUND!");
+  public function getUser ($email, $pswd) {
+    $retVal = -1;
+    if($email == null || $pswd == null) {
+      $this->log->LogInfo("getUser: null paramater passed in.");
       return $result;
-    } else {
-      $this->log->LogInfo("findUser: User NOT found.");
-      return 0;
     }
+    $this->log->LogInfo("getUser: Searching for user in database...");
+    $conn = $this->getConnection();
+    $queryString = "SELECT Access, Email FROM user WHERE Email='" . $email . "' AND Password='" . $pswd . "';";
+    $result = $conn->query($queryString); // PDO Statement object returned if found, else 'false'.
+    if($result) {  
+      $this->log->LogInfo("getUser: User FOUND with Email = " . $result['Email']);
+      $retVal = $result['Access'];
+    } else {
+      $this->log->LogInfo("getUser: User NOT found.");
+      $retVal = -1;
+    }
+    return $retVal;
   }
 
   /*
-  * Validate and login existing user.
+  * Validate existing user.
   */
-  public boolean loginUser($email, $password) {
+  public function loginUser ($email, $pswd) {
     $validated = true;
     if(findUser($email)) { // TODO : confirm return value is an int for user_id
       // TODO: check password
@@ -75,23 +83,8 @@ class Dao {
       exit; // TODO : Just exit or goto a page here ???
     } else {
 
+    // insert into user (access, email, password, username) values (0, "getmovednow2@gmail.com", "testing", "MJ Foster");
     }
   }
 
-  
-  // public function getComments () {    
-  //   $this->log->LogInfo("Reading from database...");
-  //   $conn = $this->getConnection();
-  //   return $conn->query("select comment_text, date_entered from comments order by date_entered desc");
-  // }
-
-  // public function saveComment ($comment) {
-  //   $this->log->LogInfo("Saving comment: " . $comment);
-
-  //   $conn = $this->getConnection();
-  //   $saveQuery = "insert into comments (comment_text, user_id) values (:comment_text, 1)";
-  //   $q = $conn->prepare($saveQuery);
-  //   $q->bindParam(":comment_text", $comment);
-  //   $q->execute();
-  // }
 }
