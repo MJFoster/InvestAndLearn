@@ -1,3 +1,10 @@
+<?php
+	/* 'header.php' is included in many other PHP sources, so start_session() is placed here to minimize redundance.
+	$_SESSION associative array maintains elements as variables that persist between server and client exchange,
+	but only as long as $SESSION_ID is the same (ie, session is still alive). */
+	session_start();	// Initiate and/or confirm $SESSION_ID cookie matches between server and client so variables 
+?>
+
 <html>
 
 <head>
@@ -14,8 +21,7 @@
 		<nav id="banner-nav" class="nav-fonts white-text">
 			<a onclick="contactUs()" class="white-text" alt="Contact Us">Contact Us | </a>
 			<a href="aboutUs.php" class="white-text" alt="About Us">About Us | </a>
-			<!--<a href="contactUs.php" class="secure cyan-text" alt="Member Login"><i class="fa fa-lock"></i> Member Login</a>-->
-			<a onclick="contactUs()" class="secure cyan-text" alt="Member Login"><i class="fa fa-lock"></i> Member Login</a>
+			<a onclick="LoginForm.php" class="secure cyan-text" alt="Member Login"><i class="fa fa-lock"></i> Member Login</a>
 		</nav>
 	</div>
 

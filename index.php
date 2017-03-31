@@ -1,5 +1,5 @@
 <?php
-    $thisPage = "Home-Page";
+	$thisPage = "Home-Page";
 	$currentPage = $thisPage;
     include("header.php");
 ?>
