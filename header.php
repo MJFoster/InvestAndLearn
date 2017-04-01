@@ -21,7 +21,7 @@
 		<nav id="banner-nav" class="nav-fonts white-text">
 			<a onclick="contactUs()" class="white-text" alt="Contact Us">Contact Us | </a>
 			<a href="aboutUs.php" class="white-text" alt="About Us">About Us | </a>
-			<a onclick="LoginForm.php" class="secure cyan-text" alt="Member Login"><i class="fa fa-lock"></i> Member Login</a>
+			<a href="LoginForm.php" class="secure cyan-text" alt="Member Login"><i class="fa fa-lock"></i> Member Login</a>
 		</nav>
 	</div>
 

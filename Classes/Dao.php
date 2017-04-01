@@ -1,90 +1,74 @@
 <?php
-/*
-* Data Access Object to connect to a given database with, and
-* provide functions to read/save data from/to database.  All
-* database access attempts are logged in a text file using 'KLogger' class.
-*/
 
-require_once 'KLogger.php';
+  require_once 'Classes/KLogger.php';
 
-class Dao {
+  class Dao {
 
-  // private $host = "localhost:2222";
-  private $host = "localhost";
-  private $db = "InvestAndLearn";
-  private $user = "mjfoster";
-  private $pass = "password";
-  private $log;
-  private $ADMIN_ACCESS = 1;
-  private $USER_ACCESS = 0;
+    private $host = "localhost";
+    private $db = "InvestAndLearn";
+    private $user = "mjfoster";
+    private $pass = "password";
 
-  public function __construct () {
-    $this->log = new KLogger ("tmp/log.txt" , KLogger::DEBUG);
-  }
+    // private $host = "us-cdbr-iron-east-03.cleardb.net";
+    // private $db = "heroku_617ee5455801598";
+    // private $user = "b29b7b863c6a3d";
+    // private $pass = "27977cb5";
 
-  public function getConnection () {
-    $this->log->LogDebug("getConnection: Attempting database connection...");
-    try {
-      $conn = new PDO("mysql:host={$this->host};dbname={$this->db}", $this->user,
-            $this->pass);
-    } catch (Exception $e) {
-      $this->log->LogFatal($e);
-      exit;
+    private $log;
+    private $ADMIN_ACCESS = 1;
+    private $GENERAL_ACCESS = 0;
+
+    public function __construct () {
+      $this->log = new KLogger ("tmp/log.txt" , KLogger::DEBUG);
     }
-    $this->log->LogDebug("getConnection: Success, database connected!");
-    return $conn;
-  } 
 
-  /*
-  * Searches 'user' table for given email/password combo.
-  * If found, return 'access', else return -1.
-  */
-  public function getUser ($email, $pswd) {
-    $retVal = -1;
-    if($email == null || $pswd == null) {
-      $this->log->LogInfo("getUser: null paramater passed in.");
-      return $result;
+
+    public function getConnection () {
+      $this->log->LogDebug("getConnection: Attempting database connection...");
+      try {
+        $conn = new PDO("mysql:host={$this->host};dbname={$this->db}", $this->user,
+              $this->pass);
+      } catch (Exception $e) {
+        $this->log->LogFatal($e);
+        exit;
+      }
+
+      $this->log->LogDebug("getConnection: Success, database connected!");
+      return $conn;
     }
-    $this->log->LogInfo("getUser: Searching for user in database...");
-    $conn = $this->getConnection();
-    $queryString = "SELECT Access, Email FROM user WHERE Email='" . $email . "' AND Password='" . $pswd . "';";
-    $result = $conn->query($queryString); // PDO Statement object returned if found, else 'false'.
-    if($result) {  
-      $this->log->LogInfo("getUser: User FOUND with Email = " . $result['Email']);
-      $retVal = $result['Access'];
-    } else {
-      $this->log->LogInfo("getUser: User NOT found.");
-      $retVal = -1;
+
+
+    /*
+    * Searches 'user' table for given email.
+    * If found, return query result in an associative array, else false.
+    */
+    public function getUser ($email) {
+      $this->log->LogDebug("getUser: Searching for user in database...");
+      $conn = $this->getConnection();
+      // $queryString = "select User_Email, User_Password, User_Access from user where User_Email='" . $email . "' and User_Password='" . $pswd . "';";
+      $queryString = "select User_Email, User_Password, User_Access from user where User_Email='" . $email . "';";
+      return $conn->query($queryString);     // PDO Statement object returned if found, else 'false'.
     }
-    return $retVal;
-  }
 
-  /*
-  * Validate existing user.
-  */
-  public function loginUser ($email, $pswd) {
-    $validated = true;
-    if(findUser($email)) { // TODO : confirm return value is an int for user_id
-      // TODO: check password
-    } else {
-      $this->log->LogInfo("loginUser: Email not found in database.");
-      $validated = false;
-    }
-    return $validated;
-  }
-
-  /*
-  * Adds new user to 'user' table in database.
-  */
-  public function addUser($user, $password, $email) {
-    $this->log->LogInfo("adduser : Checking for duplicate user.");
-    if (findUser($user, $password)) {
-      $this->log->LogInfo("addUser: User already exists, please add a different username.");
-      exit; // TODO : Just exit or goto a page here ???
-    } else {
-
-    // insert into user (access, email, password, username) values (0, "getmovednow2@gmail.com", "testing", "MJ Foster");
+    
+    // Adds new user to 'user' table.
+    // Return true if added, otherwise false.
+    //
+    public function addUser($userName, $userPassword, $userEmail, $userAccess = GENERAL_ACCESS) { // GENERAL_ACCESS is default
+      $conn = $this->getConnection();
+      $addQuery = "insert into user (User_Email, User_Name, User_Password, User_Access) values (:userEmail, :userName, :userPassword, :userAccess);";
+      $q = $conn->prepare($addQuery);
+      $q->bindParam(":userEmail", $userEmail);
+      $q->bindParam(":userName", $userName);
+      $q->bindParam(":userPassword", $userPassword);
+      $q->bindParam(":userAccess", $userAccess);
+      if ( $q->execute() ) {
+        $this->log->LogDebug("addUser: User added.");
+        return true;
+      } else {
+        $this->log->LogDebug("addUser: User email already used, please enter a different user email.");
+        return false;
+      }
     }
   }
 
-}
