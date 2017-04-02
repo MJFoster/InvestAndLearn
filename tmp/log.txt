@@ -1,3 +1,141 @@
-now - DEBUG --> getUser: Searching for user in database... 
+
+now - DEBUG --> getUser: Searching for email in database...mj@mj.com 
 now - DEBUG --> getConnection: Attempting database connection... 
 now - DEBUG --> getConnection: Success, database connected! 
+now - DEBUG --> LoginHandler: User EMAIL Matched!
+
+Searching For: mj@mj.com
+
+Found: MJ@MJ.com
+ 
+now - DEBUG --> LoginHandler: User password NOT found!
+
+Searching For: 22222
+ 
+now - DEBUG --> ------------------ 
+now - DEBUG --> getUser: Searching for email in database...mj@mj.com 
+now - DEBUG --> getConnection: Attempting database connection... 
+now - DEBUG --> getConnection: Success, database connected! 
+now - DEBUG --> LoginHandler: User EMAIL Matched!
+
+Searching For: mj@mj.com
+
+Found: MJ@MJ.com
+ 
+now - DEBUG --> LoginHandler: User PASSWORD Matched!
+
+Searching For: 11111
+
+Found: 11111
+ 
+now - DEBUG --> ------------------ 
+now - DEBUG --> getUser: Searching for email in database...mj@mj.com 
+now - DEBUG --> getConnection: Attempting database connection... 
+now - DEBUG --> getConnection: Success, database connected! 
+now - DEBUG --> LoginHandler: User EMAIL Matched!
+
+Searching For: mj@mj.com
+
+Found: MJ@MJ.com
+ 
+now - DEBUG --> LoginHandler: User password NOT found!
+
+Searching For: 33333
+ 
+now - DEBUG --> ------------------ 
+now - DEBUG --> getUser: Searching for email in database...mj@mj.com 
+now - DEBUG --> getConnection: Attempting database connection... 
+now - DEBUG --> getConnection: Success, database connected! 
+now - DEBUG --> LoginHandler: User EMAIL Matched!
+
+Searching For: mj@mj.com
+
+Found: MJ@MJ.com
+ 
+now - DEBUG --> LoginHandler: User password NOT found!
+
+Searching For: 555555
+ 
+now - DEBUG --> ------------------ 
+now - DEBUG --> getUser: Searching for email in database...mj@mj.com 
+now - DEBUG --> getConnection: Attempting database connection... 
+now - DEBUG --> getConnection: Success, database connected! 
+now - DEBUG --> LoginHandler: User EMAIL Matched!
+
+Searching For: mj@mj.com
+
+Found: MJ@MJ.com
+ 
+now - DEBUG --> LoginHandler: User password NOT found!
+
+Searching For: 555555555
+ 
+now - DEBUG --> ------------------ 
+now - DEBUG --> getUser: Searching for email in database...mj@mj.com 
+now - DEBUG --> getConnection: Attempting database connection... 
+now - DEBUG --> getConnection: Success, database connected! 
+now - DEBUG --> LoginHandler: User EMAIL Matched!
+
+Searching For: mj@mj.com
+
+Found: MJ@MJ.com
+ 
+now - DEBUG --> LoginHandler: User password NOT found!
+
+Searching For: 22222222
+ 
+now - DEBUG --> ------------------ 
+now - DEBUG --> getUser: Searching for email in database...joe@mj.com 
+now - DEBUG --> getConnection: Attempting database connection... 
+now - DEBUG --> getConnection: Success, database connected! 
+now - DEBUG --> LoginHandler: User email NOT found!
+
+Searching For: joe@mj.com
+ 
+now - DEBUG --> ------------------ 
+now - DEBUG --> getUser: Searching for email in database...joe@mj.com 
+now - DEBUG --> getConnection: Attempting database connection... 
+now - DEBUG --> getConnection: Success, database connected! 
+now - DEBUG --> LoginHandler: User email NOT found!
+
+Searching For: joe@mj.com
+ 
+now - DEBUG --> ------------------ 
+now - DEBUG --> getUser: Searching for email in database...mj@mj.com 
+now - DEBUG --> getConnection: Attempting database connection... 
+now - DEBUG --> getConnection: Success, database connected! 
+now - DEBUG --> LoginHandler: User EMAIL Matched!
+
+Searching For: mj@mj.com
+
+Found: MJ@MJ.com
+ 
+now - DEBUG --> LoginHandler: User password NOT found!
+
+Searching For: 22222
+ 
+now - DEBUG --> ------------------ 
+now - DEBUG --> getUser: Searching for email in database...mj@mj.com 
+now - DEBUG --> getConnection: Attempting database connection... 
+now - DEBUG --> getConnection: Success, database connected! 
+now - DEBUG --> LoginHandler: User EMAIL Matched!
+
+Searching For: mj@mj.com
+
+Found: MJ@MJ.com
+ 
+now - DEBUG --> LoginHandler: User PASSWORD Matched!
+
+Searching For: 11111
+
+Found: 11111
+ 
+now - DEBUG --> ------------------ 
+now - DEBUG --> getUser: Searching for email in database...joe@mj.com 
+now - DEBUG --> getConnection: Attempting database connection... 
+now - DEBUG --> getConnection: Success, database connected! 
+now - DEBUG --> LoginHandler: User email NOT found!
+
+Searching For: joe@mj.com
+ 
+now - DEBUG --> ------------------ 

@@ -72,6 +72,12 @@ nav a {
     text-decoration: underline;
 }
 
+.alert-message {
+    background-color: red;
+}
+
+
+
 /* * * * * * * Top Banner * * * * * * */
 
 #banner {

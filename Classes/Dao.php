@@ -4,15 +4,15 @@
 
   class Dao {
 
-    private $host = "localhost";
-    private $db = "InvestAndLearn";
-    private $user = "mjfoster";
-    private $pass = "password";
+    // private $host = "localhost";
+    // private $db = "InvestAndLearn";
+    // private $user = "mjfoster";
+    // private $pass = "password";
 
-    // private $host = "us-cdbr-iron-east-03.cleardb.net";
-    // private $db = "heroku_617ee5455801598";
-    // private $user = "b29b7b863c6a3d";
-    // private $pass = "27977cb5";
+    private $host = "us-cdbr-iron-east-03.cleardb.net";
+    private $db = "heroku_617ee5455801598";
+    private $user = "b29b7b863c6a3d";
+    private $pass = "27977cb5";
 
     private $log;
     private $ADMIN_ACCESS = 1;
@@ -43,9 +43,8 @@
     * If found, return query result in an associative array, else false.
     */
     public function getUser ($email) {
-      $this->log->LogDebug("getUser: Searching for user in database...");
+      $this->log->LogDebug("getUser: Searching for email in database..." . $email);
       $conn = $this->getConnection();
-      // $queryString = "select User_Email, User_Password, User_Access from user where User_Email='" . $email . "' and User_Password='" . $pswd . "';";
       $queryString = "select User_Email, User_Password, User_Access from user where User_Email='" . $email . "';";
       return $conn->query($queryString);     // PDO Statement object returned if found, else 'false'.
     }

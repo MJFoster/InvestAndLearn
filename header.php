@@ -3,6 +3,11 @@
 	$_SESSION associative array maintains elements as variables that persist between server and client exchange,
 	but only as long as $SESSION_ID is the same (ie, session is still alive). */
 	session_start();	// Initiate and/or confirm $SESSION_ID cookie matches between server and client so variables 
+
+	// Inititalize global constants.
+	$_SESSION['SUCCESS'] = 1;
+	$_SESSION['PASSWORD_FAILED'] = -1;
+	$_SESSION['EMAIL_FAILED'] = -2;	
 ?>
 
 <html>

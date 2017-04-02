@@ -2,6 +2,11 @@
 	$thisPage = "Home-Page";
 	$currentPage = $thisPage;
     include("header.php");
+
+	$LOGIN_SUCCESS_MSG = "Login Successful!\n";
+	$_SESSION['loginState'] = 0;	// Initialize loginState.
+
+	// TODO:  Display alert box upon successful login
 ?>
 
 <div class="main-content black-text">
