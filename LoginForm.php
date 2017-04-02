@@ -15,8 +15,8 @@ $ALERT_BOX = "<div class='alert-message'>
             <input id="user-email" type="email"
                 placeholder="Enter Email "
                 <?php
-                    if (isset($_POST['userEmail'])) {
-                        echo 'value="' . $_POST["userEmail"] . '"';
+                    if (isset($_SESSION['userEmail'])) {
+                        echo 'value="' . $_SESSION["userEmail"] . '"';
                     }
                 ?>
                 name="userEmail" required>
@@ -24,6 +24,12 @@ $ALERT_BOX = "<div class='alert-message'>
             <label for="user-password" class="required">* Password :  </label>
             <input id="user-password" type="text" pattern="(([0-9]|[A-Z]|[a-z]){5,10}){1}" 
                 placeholder="5-10 alpha-numeric chars)" 
+                <?php
+                    if (isset($_SESSION['userPassword'])) {
+                        echo 'value="' . $_SESSION["userPassword"] . '"';
+                    }
+                ?>
+
                 name="userPassword" required>
 
             <input type="submit">

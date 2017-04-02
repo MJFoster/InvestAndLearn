@@ -5,6 +5,8 @@
 
 	$LOGIN_SUCCESS_MSG = "Login Successful!\n";
 	$_SESSION['loginState'] = 0;	// Initialize loginState.
+	if (isset($_SESSION['userEmail'])) unset($_SESSION['userEmail']);
+	if (isset($_SESSION['userPassword'])) unset($_SESSION['userPassword']);
 
 	// TODO:  Display alert box upon successful login
 ?>

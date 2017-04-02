@@ -16,13 +16,14 @@ $count = 0;
 if (isset($_SESSION['userAccess'])) { unset($_SESSION['userAccess']);}
 
 // Sanitize input data
-$userEmail = htmlentities($_POST['userEmail']);
-$userPassword = htmlentities($_POST['userPassword']);
+$_SESSION['userEmail'] = htmlentities($_POST['userEmail']);
 
-$users = $dao->getUser($userEmail);
+$_SESSION['userPassword'] = htmlentities($_POST['userPassword']);
+
+$users = $dao->getUser($_SESSION['userEmail']);
 $count = $users->rowCount();
 if ( $count == 0 ) { // No user found at that email
-    $log->LogDebug("LoginHandler: User email NOT found!\n\nSearching For: " . $userEmail . "\n");
+    $log->LogDebug("LoginHandler: User email NOT found!\n\nSearching For: " . $_SESSION['userEmail'] . "\n");
     $_SESSION['loginState'] = $_SESSION['EMAIL_FAILED'];
     $retryLogin = true;
 } else {  // User email found
@@ -31,14 +32,14 @@ if ( $count == 0 ) { // No user found at that email
         $currPassword = htmlentities($user['User_Password']);
         $currUserAccess = htmlentities($user['User_Access']);
     };
-    $log->LogDebug("LoginHandler: User EMAIL Matched!\n\nSearching For: " . $userEmail . "\n\nFound: " . $currEmail . "\n");
-    if ($currPassword == $userPassword) {       // User password found
-        $log->LogDebug("LoginHandler: User PASSWORD Matched!\n\nSearching For: " . $userPassword . "\n\nFound: " . $currPassword . "\n");
+    $log->LogDebug("LoginHandler: User EMAIL Matched!\n\nSearching For: " . $_SESSION['userEmail'] . "\n\nFound: " . $currEmail . "\n");
+    if ($currPassword == $_SESSION['userPassword']) {       // User password found
+        $log->LogDebug("LoginHandler: User PASSWORD Matched!\n\nSearching For: " . $_SESSION['userPassword'] . "\n\nFound: " . $currPassword . "\n");
         $_SESSION['userAccess'] = $currUserAccess;      // save UserAccess in session
         $_SESSION['loginState'] = $_SESSION['SUCCESS'];
         $retryLogin = false;
     } else {    // User password does not match
-        $log->LogDebug("LoginHandler: User password NOT found!\n\nSearching For: " . $userPassword . "\n");
+        $log->LogDebug("LoginHandler: User password NOT found!\n\nSearching For: " . $_SESSION['userPassword'] . "\n");
         $_SESSION['loginState'] = $_SESSION['PASSWORD_FAILED'];
         $retryLogin = true;
     }
