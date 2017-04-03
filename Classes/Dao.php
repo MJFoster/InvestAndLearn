@@ -53,7 +53,7 @@
     // Adds new user to 'user' table.
     // Return true if added, otherwise false.
     //
-    public function addUser($userName, $userPassword, $userEmail, $userAccess = GENERAL_ACCESS) { // GENERAL_ACCESS is default
+    public function addUser($userName, $userPassword, $userEmail, $userAccess = GENERAL_ACCESS) { // GENERAL_ACCESS is default and optional
       $conn = $this->getConnection();
       $addQuery = "insert into user (User_Email, User_Name, User_Password, User_Access) values (:userEmail, :userName, :userPassword, :userAccess);";
       $q = $conn->prepare($addQuery);

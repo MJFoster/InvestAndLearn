@@ -8,6 +8,11 @@
 	$_SESSION['SUCCESS'] = 1;
 	$_SESSION['PASSWORD_FAILED'] = -1;
 	$_SESSION['EMAIL_FAILED'] = -2;	
+	$_SESSION['ADD_FAILED'] = -3;
+	$_SESSION['ADD_RECORD_FAILED'] = "Could not add record to database.";
+	$_SESSION['EMAIL_FAILED_MSG'] = "Email Not Found, Try again.";
+	$_SESSION['PASSWORD_FAILED_MSG'] = "Password Not Found, Try again.";
+	$_SESSION['PASSWORD_PATTERN'] = "(([0-9]|[A-Z]|[a-z]){5,10}){1}";
 ?>
 
 <html>
@@ -26,6 +31,7 @@
 		<nav id="banner-nav" class="nav-fonts white-text">
 			<a onclick="contactUs()" class="white-text" alt="Contact Us">Contact Us | </a>
 			<a href="aboutUs.php" class="white-text" alt="About Us">About Us | </a>
+			<a href="JoinForm.php" class="secure white-text" alt="New Member Join">Join Club | </a>
 			<a href="LoginForm.php" class="secure cyan-text" alt="Member Login"><i class="fa fa-lock"></i> Member Login</a>
 		</nav>
 	</div>

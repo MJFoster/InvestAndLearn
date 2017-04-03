@@ -104,7 +104,7 @@ nav a {
 }
 
 #banner-nav {
-    width: 25%;
+    width: 32%;
     margin: 0.5% 1% 4% 0.5%;
     float: right;
     text-align: right;
@@ -249,7 +249,7 @@ footer {
 }
 
 #footer-nav {
-    padding: 0.5% 0%;
+    padding: 0.5% 3%;
     width: 30%;
     margin-left: 10%;
     text-align: center;
