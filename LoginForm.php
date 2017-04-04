@@ -6,7 +6,7 @@ session_start();
     <form method="POST" action="LoginHandler.php">
         <div class="form-inputs">
 
-            <label for="userEmail" class="required">* User Email:  </label>
+            <label for="user-email" class="required">* User Email:  </label>
             <input id="user-email" type="email"
                 placeholder="Enter Email "
                 <?php
@@ -47,7 +47,7 @@ session_start();
 
         case $_SESSION['PASSWORD_FAILED']:
             echo "<div class='alert-message'>";
-            echo $_SESSION['$PASSWORD_FAILED_MSG'];
+            echo $_SESSION['PASSWORD_FAILED_MSG'];
             echo "</div>";
             break;
 
