@@ -664,3 +664,17 @@ now - DEBUG --> LoginHandler: User password NOT found!
 Searching For: 99999
  
 now - DEBUG --> ------------------ 
+now - DEBUG --> getUser: Searching for email in database...anyone@mj.com 
+now - DEBUG --> getConnection: Attempting database connection... 
+now - DEBUG --> getConnection: Success, database connected! 
+now - DEBUG --> LoginHandler: User EMAIL Matched!
+
+Searching For: anyone@mj.com
+
+Found: anyone@mj.com
+ 
+now - DEBUG --> LoginHandler: User password NOT found!
+
+Searching For: 99999
+ 
+now - DEBUG --> ------------------ 
