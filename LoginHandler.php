@@ -31,6 +31,7 @@ if ( $count == 0 ) { // No user found at that email
     $log->LogDebug("LoginHandler: User EMAIL Matched!\n\nSearching For: " . $_SESSION['userEmail'] . "\n\nFound: " . $currEmail . "\n");
     if ($currPassword == $_SESSION['userPassword']) {       // User password found
         $log->LogDebug("LoginHandler: User PASSWORD Matched!\n\nSearching For: " . $_SESSION['userPassword'] . "\n\nFound: " . $currPassword . "\n");
+        $_SESSION['userName'] = htmlentities($user['User_Name']);
         $_SESSION['userAccess'] = $currUserAccess;      // save UserAccess in session
         $_SESSION['loginState'] = $_SESSION['SUCCESS'];
     } else {    // User password does not match

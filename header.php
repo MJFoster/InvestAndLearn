@@ -34,6 +34,15 @@
 			<a href="JoinForm.php" class="secure white-text" alt="New Member Join">Join Club | </a>
 			<a href="LoginForm.php" class="secure cyan-text" alt="Member Login"><i class="fa fa-lock"></i> Member Login</a>
 		</nav>
+		<?php
+			if ($_SESSION['loginState'] == $_SESSION['SUCCESS']) {
+				echo "<div id='login-state-msg' class='white-text'>
+					Welcome " . $_SESSION['userName'] .
+					"</div>";
+			}
+		?>
+
+
 	</div>
 
 	<nav id="main-menu-nav" class="nav-fonts">
