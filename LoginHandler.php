@@ -24,16 +24,21 @@ if ( $count == 0 ) { // No user found at that email
     $_SESSION['loginState'] = $_SESSION['EMAIL_FAILED'];
 } else {  // User email found
     foreach ($users as $user) { // Should only be one unique user as specified by the db schema
-        $currEmail = htmlentities($user['User_Email']);
-        $currPassword = htmlentities($user['User_Password']);
-        $currUserAccess = htmlentities($user['User_Access']);
+        $foundEmail = htmlentities($user['User_Email']);
+        $foundUserName = htmlentities($user['User_Name']);
+        $foundPassword = htmlentities($user['User_Password']);
+        $foundUserAccess = htmlentities($user['User_Access']);
     };
-    $log->LogDebug("LoginHandler: User EMAIL Matched!\n\nSearching For: " . $_SESSION['userEmail'] . "\n\nFound: " . $currEmail . "\n");
-    if ($currPassword == $_SESSION['userPassword']) {       // User password found
-        $log->LogDebug("LoginHandler: User PASSWORD Matched!\n\nSearching For: " . $_SESSION['userPassword'] . "\n\nFound: " . $currPassword . "\n");
-        $_SESSION['userName'] = htmlentities($user['User_Name']);
-        $_SESSION['userAccess'] = $currUserAccess;      // save UserAccess in session
+    $log->LogDebug("LoginHandler: User EMAIL Matched!\n\nSearching For: " . $_SESSION['userEmail'] . "\n\nFound: " . $foundEmail . "\n");
+    if ($foundPassword == $_SESSION['userPassword']) {       // User password found
+        $log->LogDebug("LoginHandler: User PASSWORD Matched!\n\nSearching For: " . $_SESSION['userPassword'] . "\n\nFound: " . $foundPassword . "\n");
+        $_SESSION['userAccess'] = $foundUserAccess;      // save userAccess in session
+        $_SESSION['userName'] = $foundUserName;          // save userName in session
         $_SESSION['loginState'] = $_SESSION['SUCCESS'];
+        $log->LogDebug("LoginHandler: \$_SESSION Updated\n"
+                            . "userName: " . $_SESSION['userName'] . "\n"
+                            . "userAccess: " . $_SESSION['userAccess'] . "\n"
+                            . "loginState: " . $_SESSION['loginState'] . "\n");
     } else {    // User password does not match
         $log->LogDebug("LoginHandler: User password NOT found!\n\nSearching For: " . $_SESSION['userPassword'] . "\n");
         $_SESSION['loginState'] = $_SESSION['PASSWORD_FAILED'];
