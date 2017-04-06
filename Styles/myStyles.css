@@ -13,7 +13,6 @@
 }
 
 .cyan-text {
-    /*color: #05EAFA;*/
     color: #11CFFA;
 }
 
@@ -30,7 +29,6 @@
 }
 
 .cyan-background {
-    /*color: #05EAFA;*/
     background-color: #11CFFA;
 }
 
@@ -79,7 +77,6 @@ nav a {
 
 
 /* * * * * * * Top Banner * * * * * * */
-
 #banner {
     width:  100%;
     height: 10%;
@@ -110,16 +107,20 @@ nav a {
     text-align: right;
 }
 
-#login-state-msg {
-    /*clear: right;*/
-}
-
 /* * * * * * * Main Menu Below Banner * * * * * * */
 #main-menu-nav {
     width: 64%;
     border: 1px solid black;
     height: 5%;
     padding: 0.5% 0% 0% 36%;
+}
+
+#login-state-msg {
+    float: right;
+    margin-top: -2.5%;
+    padding-right: 1%;
+    padding-left: 10%;
+    text-align: right;
 }
 
 

@@ -34,13 +34,6 @@
 			<a href="JoinForm.php" class="secure white-text" alt="New Member Join">Join Club | </a>
 			<a href="LoginForm.php" class="secure cyan-text" alt="Member Login"><i class="fa fa-lock"></i> Member Login</a>
 		</nav>
-		<?php
-			if ($_SESSION['loginState'] == $_SESSION['SUCCESS']) {
-				echo "<div id='login-state-msg' class='white-text'>
-					Welcome " . $_SESSION['userName'] .
-					"</div>";
-			}
-		?>
 
 
 	</div>
@@ -50,6 +43,13 @@
 		<a href="learn.php" class="dark-purple-text" alt="Learn To Invest">Learn | </a>
 		<a href="calendar.php" class="dark-purple-text" alt="Calendar">Events Calendar | </a>
 		<a href="blog.php" class="dark-purple-text" alt="Blog">Blog</a>
+		<?php
+			if ($_SESSION['loginState'] == $_SESSION['SUCCESS']) {
+				echo "<div id='login-state-msg' class='dark-purple-text'>Welcome " 
+					. $_SESSION['userName'] 
+					. "</div>";
+			}
+		?>
 	</nav>
 
 </header>

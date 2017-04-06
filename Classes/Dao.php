@@ -45,7 +45,7 @@
     public function getUser ($email) {
       $this->log->LogDebug("getUser: Searching for email in database..." . $email);
       $conn = $this->getConnection();
-      $queryString = "select User_Email, User_Password, User_Access from user where User_Email='" . $email . "';";
+      $queryString = "select User_Name, User_Email, User_Password, User_Access from user where User_Email='" . $email . "';";
       return $conn->query($queryString);     // PDO Statement object returned if found, else 'false'.
     }
 
