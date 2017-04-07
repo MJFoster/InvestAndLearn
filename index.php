@@ -3,15 +3,15 @@
 	$currentPage = $thisPage;
     include("header.php");
 
-	$LOGIN_SUCCESS_MSG = "Login Successful!\n";
-	$_SESSION['loginState'] = 0;	// Initialize loginState.
+	// Initialize state
+	if (!isset($_SESSION['loginState']))
+		$_SESSION['loginState'] = 0;	
 	if (isset($_SESSION['userEmail'])) unset($_SESSION['userEmail']);
 	if (isset($_SESSION['userPassword'])) unset($_SESSION['userPassword']);
 ?>
 
 <div class="main-content black-text">
     <img class="images" id="home-page-image" src="Images/blue-$$$.jpg" alt="Stacked Money">
-	<!--<img class="images" id="home-page-image" src="Images/Coins.jpg" alt="Stacked Money">-->
 	<div>
 		<div id="home-page-content" class="dark-purple-text">
 			<p>

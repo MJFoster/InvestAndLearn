@@ -51,8 +51,11 @@ session_start();
             echo "</div>";
             break;
 
+        case $_SESSION['LOGGED_OUT']:
+            break;  // Logged out, no message.
+
         case 0:
-            break;   // Initial state, no message.
+            break;  // Initial state, no message.
 
         default:
             echo "<div class='alert-message'>Invalid loginState</div>";

@@ -9,6 +9,7 @@
 	$_SESSION['PASSWORD_FAILED'] = -1;
 	$_SESSION['EMAIL_FAILED'] = -2;	
 	$_SESSION['ADD_FAILED'] = -3;
+	$_SESSION['LOGGED_OUT'] = -4;
 	$_SESSION['ADD_RECORD_FAILED'] = "Could not add record to database.";
 	$_SESSION['EMAIL_FAILED_MSG'] = "Email Not Found, Try again.";
 	$_SESSION['PASSWORD_FAILED_MSG'] = "Password Not Found, Try again.";
@@ -32,7 +33,13 @@
 			<a onclick="contactUs()" class="white-text" alt="Contact Us">Contact Us | </a>
 			<a href="aboutUs.php" class="white-text" alt="About Us">About Us | </a>
 			<a href="JoinForm.php" class="secure white-text" alt="New Member Join">Join Club | </a>
-			<a href="LoginForm.php" class="secure cyan-text" alt="Member Login"><i class="fa fa-lock"></i> Member Login</a>
+			<?php
+				if ($_SESSION['loginState'] == $_SESSION['SUCCESS']) {	  // Already logged in
+					echo "<a href='logout.php' class='cyan-text' alt='Logout'>Logout</a>";
+				} else {
+					echo "<a href='LoginForm.php' class='secure cyan-text' alt='Member Login'><i class='fa fa-lock'></i> Member Login</a>";
+				}
+			?>
 		</nav>
 
 
@@ -48,6 +55,8 @@
 				echo "<div id='login-state-msg' class='dark-purple-text'>Welcome " 
 					. $_SESSION['userName'] 
 					. "</div>";
+			} elseif ($_SESSION['loginState'] == $_SESSION['LOGGED_OUT']) {
+				echo "<div id='login-state-msg' class='dark-purple-text'>Thanks for visiting, have a great day!</div>";
 			}
 		?>
 	</nav>
