@@ -56,6 +56,9 @@ session_start();
             echo $_SESSION['ADD_RECORD_FAILED'];
             echo "</div>";
             break;
+            
+        case $_SESSION['LOGGED_OUT']:
+            break;  // Logged out, no message.
 
         case 0:
             break;   // Initial state, no message.

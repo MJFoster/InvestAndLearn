@@ -258,3 +258,8 @@ userAccess: 0
 loginState: 1
  
 now - DEBUG --> ------------------ 
+now - DEBUG --> getConnection: Attempting database connection... 
+now - DEBUG --> getConnection: Success, database connected! 
+now - DEBUG --> addUser: User added. 
+now - DEBUG --> addUser: New user successfully added. 
+now - DEBUG --> ------------------ 
