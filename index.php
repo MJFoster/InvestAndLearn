@@ -3,11 +3,11 @@
 	$currentPage = $thisPage;
     include("header.php");
 
-	// Initialize state
+	// Initialize START states
 	if (!isset($_SESSION['loginState']))
-		$_SESSION['loginState'] = 0;	
-	if (isset($_SESSION['userEmail'])) unset($_SESSION['userEmail']);
-	if (isset($_SESSION['userPassword'])) unset($_SESSION['userPassword']);
+		$_SESSION['loginState'] = $_SESSION['START'];	
+	// if (isset($_SESSION['userEmail'])) unset($_SESSION['userEmail']);
+	// if (isset($_SESSION['userPassword'])) unset($_SESSION['userPassword']);
 ?>
 
 <div class="main-content black-text">

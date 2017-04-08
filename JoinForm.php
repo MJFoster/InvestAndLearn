@@ -60,7 +60,7 @@ session_start();
         case $_SESSION['LOGGED_OUT']:
             break;  // Logged out, no message.
 
-        case 0:
+        case $_SESSION['START']:
             break;   // Initial state, no message.
 
         default:

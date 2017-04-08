@@ -11,7 +11,7 @@ session_start();
                 placeholder="Enter Email "
                 <?php
                     if (isset($_SESSION['userEmail'])) {
-                        echo 'value="' . $_SESSION["userEmail"] . '"';
+                        echo "value='" . $_SESSION['userEmail'] . "'";
                     }
                 ?>
                 name="userEmail" required>
@@ -22,7 +22,7 @@ session_start();
                 placeholder="5-10 alpha-numeric chars)" 
                 <?php
                     if (isset($_SESSION['userPassword'])) {
-                        echo 'value="' . $_SESSION["userPassword"] . '"';
+                        echo "value='" . $_SESSION['userPassword'] . "'";
                     }
                 ?>
 
@@ -40,21 +40,21 @@ session_start();
             break;
 
         case $_SESSION['EMAIL_FAILED']:
-            echo "<div class='alert-message'>";
-            echo $_SESSION['EMAIL_FAILED_MSG'];
-            echo "</div>";
+            echo "<div style='color: blue;'>"
+            . $_SESSION['EMAIL_FAILED_MSG']
+            . "</div>";
             break;
 
         case $_SESSION['PASSWORD_FAILED']:
-            echo "<div class='alert-message'>";
-            echo $_SESSION['PASSWORD_FAILED_MSG'];
-            echo "</div>";
+            echo "<div style='color: red;'>"
+            . $_SESSION['PASSWORD_FAILED_MSG']
+            . "</div>";
             break;
 
         case $_SESSION['LOGGED_OUT']:
             break;  // Logged out, no message.
 
-        case 0:
+        case $_SESSION['START']:
             break;  // Initial state, no message.
 
         default:
