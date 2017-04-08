@@ -4,7 +4,7 @@
 	but only as long as $SESSION_ID is the same (ie, session is still alive). */
 	session_start();	// Initiate and/or confirm $SESSION_ID cookie matches between server and client so variables 
 
-	// Inititalize global constants.
+	// Inititalize $_SESSION constants.
 	$_SESSION['START'] = 0;
 	$_SESSION['SUCCESS'] = 1;
 	$_SESSION['PASSWORD_FAILED'] = -1;
@@ -57,7 +57,7 @@
 					. $_SESSION['userName'] 
 					. "</div>";
 			} elseif ($_SESSION['loginState'] == $_SESSION['LOGGED_OUT']) {
-				echo "<div id='login-state-msg' class='dark-purple-text fade-away'>Thanks for visiting, have a great day!</div>";
+				echo "<div id='login-state-msg' class='dark-purple-text'>Thanks for visiting, have a great day!</div>";
 			}
 		?>
 	</nav>
