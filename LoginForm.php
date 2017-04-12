@@ -40,19 +40,16 @@ session_start();
             break;
 
         case $_SESSION['EMAIL_FAILED']:
-            echo "<div style='color: blue;'>"
+            echo "<div>"
             . $_SESSION['EMAIL_FAILED_MSG']
             . "</div>";
             break;
 
         case $_SESSION['PASSWORD_FAILED']:
-            echo "<div style='color: red;'>"
+            echo "<div>"
             . $_SESSION['PASSWORD_FAILED_MSG']
             . "</div>";
             break;
-
-        case $_SESSION['LOGGED_OUT']:
-            break;  // Logged out, no message.
 
         case $_SESSION['START']:
             break;  // Initial state, no message.

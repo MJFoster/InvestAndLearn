@@ -20,6 +20,10 @@
     color: black;
 }
 
+.red-text {
+    color: red;
+}
+
 .purple-background {
     background-color: #F0E6FA;
 }
@@ -70,11 +74,6 @@ nav a {
     text-decoration: underline;
 }
 
-.alert-message {
-    background-color: red;
-}
-
-
 
 /* * * * * * * Top Banner * * * * * * */
 #banner {
@@ -121,7 +120,6 @@ nav a {
     padding-right: 1%;
     padding-left: 10%;
     text-align: right;
-    
 }
 
 

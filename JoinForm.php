@@ -52,13 +52,10 @@ session_start();
             break;
 
         case $_SESSION['ADD_FAILED']:
-            echo "<div class='alert-message'>Could not add new user ...";
-            echo $_SESSION['ADD_RECORD_FAILED'];
-            echo "</div>";
+            echo "<div>Could not add new user ..."
+            . $_SESSION['ADD_RECORD_FAILED']
+            . "</div>";
             break;
-            
-        case $_SESSION['LOGGED_OUT']:
-            break;  // Logged out, no message.
 
         case $_SESSION['START']:
             break;   // Initial state, no message.

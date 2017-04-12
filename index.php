@@ -2,10 +2,6 @@
 	$thisPage = "Home-Page";
 	$currentPage = $thisPage;
     include("header.php");
-
-	// Initialize START states
-	if (!isset($_SESSION['loginState']))
-		$_SESSION['loginState'] = $_SESSION['START'];	
 ?>
 
 <div class="main-content black-text">
