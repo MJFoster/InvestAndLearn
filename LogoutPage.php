@@ -1,5 +1,7 @@
+<?php
 session_start();
 $_SESSION['loginState'] = 0;
+?>
 
 <html>
 
@@ -23,14 +25,12 @@ $_SESSION['loginState'] = 0;
 
 	</div>
 
-	<nav id="main-menu-nav" class="nav-fonts">
-	</nav>
     <nav id="main-menu-nav" class="nav-fonts">
 		<a href="index.php" class="dark-purple-text" alt="Home">Home | </a>
 		<a href="learn.php" class="dark-purple-text" alt="Learn To Invest">Learn | </a>
 		<a href="calendar.php" class="dark-purple-text" alt="Calendar">Events Calendar | </a>
 		<a href="blog.php" class="dark-purple-text" alt="Blog">Blog</a>
-        <div id='login-state-msg' class='cyan-text'>You've been logged out.</div>";
+        <div id='login-state-msg' class='dark-purple-text'>You've been logged out.</div>
 
 	</nav>
 </header>

@@ -79,7 +79,7 @@
 					. $_SESSION['userName'] 
 					. "</div>";
 			} else if ($_SESSION['loginState'] == $_SESSION['LOGGED_OUT']) {
-				echo "<div id='login-state-msg' class='cyan-text'>Thanks For Visiting!</div>";
+				echo "<div id='login-state-msg' class='dark-purple-text'>Thanks For Visiting!</div>";
 			}
 		?>
 	</nav>
