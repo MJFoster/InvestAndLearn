@@ -37,7 +37,10 @@ $_SESSION['loginState'] = 0;
 
 <body>
 
-<div class="main-content black-text">
+<?php
+	include("MainContentMarkup.php");
+?>
+<!--<div class="main-content black-text">
     <img class="images" id="home-page-image" src="Images/blue-$$$.jpg" alt="Stacked Money">
 	<div>
 		<div id="home-page-content" class="dark-purple-text">
@@ -61,7 +64,7 @@ $_SESSION['loginState'] = 0;
 		<button id="testimonials-button" class="cyan-background dark-purple-text"><a href="testimonials.php"><i class="fa fa-play"></i> Testimonials</a></button>
 	</div>
 
-</div>
+</div>-->
 
 <?php
     include("footer.php");

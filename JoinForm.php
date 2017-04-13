@@ -1,5 +1,5 @@
 <?php
-session_start();
+    session_start();
 ?>
 
 <div>
@@ -50,18 +50,24 @@ session_start();
         case $_SESSION['SUCCESS']:
             header("Location:index.php");
             break;
-
+            
         case $_SESSION['ADD_FAILED']:
             echo "<div>Could not add new user ..."
             . $_SESSION['ADD_RECORD_FAILED']
             . "</div>";
             break;
 
+        case $_SESSION['EMAIL_FAILED']:
+            break;
+
+        case $_SESSION['PASSWORD_FAILED']:
+            break;
+
         case $_SESSION['START']:
-            break;   // Initial state, no message.
+            break;
 
         case $_SESSION['LOGGED_OUT']:
-            break; // no message.
+            break;
         
         default:
             echo "<div class='alert-message'>Invalid loginState</div>";

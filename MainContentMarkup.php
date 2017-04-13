@@ -1,13 +1,4 @@
-<?php
-	$thisPage = "Home-Page";
-	$currentPage = $thisPage;
-    include("header.php");
-?>
-
-<?php
-	include("MainContentMarkup.php");
-?>
-<!--<div class="main-content black-text">
+<div class="main-content black-text">
     <img class="images" id="home-page-image" src="Images/blue-$$$.jpg" alt="Stacked Money">
 	<div>
 		<div id="home-page-content" class="dark-purple-text">
@@ -31,8 +22,4 @@
 		<button id="testimonials-button" class="cyan-background dark-purple-text"><a href="testimonials.php"><i class="fa fa-play"></i> Testimonials</a></button>
 	</div>
 
-</div>-->
-
-<?php
-    include("footer.php");
-?>
+</div>
