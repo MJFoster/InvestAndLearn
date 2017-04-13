@@ -2,7 +2,9 @@
 	/* 'header.php' is included in many other PHP sources, so start_session() is placed here to minimize redundance.
 	$_SESSION associative array maintains elements as variables that persist between server and client exchange,
 	but only as long as $SESSION_ID is the same (ie, session is still alive). */
-	session_start();	// Initiate and/or confirm $SESSION_ID cookie matches between server and client so variables 
+
+	// session_start();	// Initiate and/or confirm $SESSION_ID cookie matches between server and client.
+	session_start();
 
 	require_once 'Classes/KLogger.php';
 	$log = new KLogger("tmp/log.txt", KLogger::DEBUG);
@@ -13,16 +15,28 @@
 	$_SESSION['PASSWORD_FAILED'] = -1;
 	$_SESSION['EMAIL_FAILED'] = -2;	
 	$_SESSION['ADD_FAILED'] = -3;
+	$_SESSION['LOGGED_OUT'] = -4;
 	$_SESSION['ADD_RECORD_FAILED'] = "Could not add record to database.";
 	$_SESSION['EMAIL_FAILED_MSG'] = "Email Not Found, Try again.";
 	$_SESSION['PASSWORD_FAILED_MSG'] = "Password Not Found, Try again.";
 	$_SESSION['PASSWORD_PATTERN'] = "(([0-9]|[A-Z]|[a-z]){5,10}){1}";
+	$_SESSION['TIMEOUT'] = 1800;	// Timeout in 30 minutes.
+
+	// Keep track of last activity on the site to close down the session and destroy it for future visitors.
+	if ( isset($_SESSION['lastActivity'])  &&  ((time() - $_SESSION['lastActivity']) > $_SESSION['TIMEOUT']) ) {
+		$log->LogDebug("header.php: TIMED OUT at: " . time() . "\nLast Activity was: " . $_SESSION['lastActivity'] . "\n------------------");
+		session_unset();
+		session_destroy();
+		header("Location: LogoutPage.php");
+	}
+	$_SESSION['lastActivity'] = time();
+	$log->LogDebug("header.php: Last Activity: " . $_SESSION['lastActivity'] . "\n------------------");
 
 	// Initialize START states
-	if (!isset($_SESSION['loginState']))
+	if (!isset($_SESSION['loginState'])) {
 		$_SESSION['loginState'] = $_SESSION['START'];
-		$log->LogDebug("header.php: Initializing loginState to: " . $_SESSION['loginState']);
-		$log->LogDebug("------------------");
+		$log->LogDebug("header.php: Initializing loginState to: " . $_SESSION['loginState'] . "\n------------------");
+	}
 ?>
 
 <html>
@@ -64,6 +78,8 @@
 				echo "<div id='login-state-msg' class='dark-purple-text'>Welcome " 
 					. $_SESSION['userName'] 
 					. "</div>";
+			} else if ($_SESSION['loginState'] == $_SESSION['LOGGED_OUT']) {
+				echo "<div id='login-state-msg' class='cyan-text'>Thanks For Visiting!</div>";
 			}
 		?>
 	</nav>
