@@ -1,9 +1,9 @@
 // Using JQuery, a JavaScript framework
-$(login-form).ready(function() {
-    var userEmail = $('user-email').val();
-    var userPassword = $('#user-password').val();
-    
-    $('#login-form-submit').onclick(function(e) {
+$(function() {
+    $("#login-form").submit(function(e) {
+        var userEmail = $("#user-email").val();
+        var userPassword = $("#user-password").val();
+        alert("InvestAndLearn.js ...\n");
         if(userEmail == ""  ||  userPassword == "") {
             alert("You must enter both an email and password to login.\n");
             e.preventDefault();     // Prevents submission from happening.
@@ -17,7 +17,7 @@ $(login-form).ready(function() {
 //     var userEmail = $('user-email').val();
 //     var userPassword = $('#user-password').val();
     
-//     $('#login-form-submit').onclick(function(e) {
+//     $('#login-form-submit').click(function(e) {
 //         if(userEmail == ""  ||  userPassword == "") {
 //             alert("You must enter both an email and password to login.");
 //             e.preventDefault();     // Prevents submission from happening.

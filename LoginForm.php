@@ -15,7 +15,7 @@ session_start();
                         echo "value='" . $_SESSION['userEmail'] . "'";
                     }
                 ?>
-                name="userEmail" required>
+                name="userEmail"> <!-- TODO:  add back in 'required' attribute on <input> tag -->
 
             <!-- Validate Password: Alphanumeric, no special chars, 5-10 chars inclusive permitted. -->
             <label for="user-password" class="required">* Password :  </label>
@@ -27,7 +27,7 @@ session_start();
                     }
                 ?>
 
-                name="userPassword" required>
+                name="userPassword">  <!-- TODO:  add back in 'required' attribute on <input> tag -->
 
             <input id="login-form-submit" type="submit">
         </div>
