@@ -4,7 +4,7 @@ session_start();
 ?>
 
 <div>
-    <form method="POST" action="LoginHandler.php">
+    <form id="login-form" method="POST" action="LoginHandler.php">
         <div class="form-inputs">
 
             <label for="user-email" class="required">* User Email:  </label>
@@ -29,7 +29,7 @@ session_start();
 
                 name="userPassword" required>
 
-            <input type="submit">
+            <input id="login-form-submit" type="submit">
         </div>
     </form>
 

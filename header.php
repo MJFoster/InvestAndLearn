@@ -38,7 +38,12 @@
 	<link rel="stylesheet" type="text/css" href="Styles/myStyles.css">
 	<link rel="stylesheet" href="Styles/font-awesome-4.7.0/css/font-awesome.min.css">
 	<link rel="icon" type="image/x-icon" href="Images/favicon.png">
-	<script src="Scripts/contactUs.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.js"
+			integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+			crossorigin="anonymous">
+	</script>
+	<script src="Scripts/InvestAndLearn.js"></script>
+	<!--<script src="Scripts/contactUs.js"></script>-->
 </head>
 
 <header>

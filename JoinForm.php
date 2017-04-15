@@ -3,7 +3,7 @@
 ?>
 
 <div>
-    <form method="POST" action="JoinHandler.php">
+    <form id="join-form" method="POST" action="JoinHandler.php">
         <div class="form-inputs">
             <h2>Thanks For Joining Invest And Learn!</h2>
 
@@ -40,7 +40,7 @@
 
                 name="userPassword" required>
 
-            <input type="submit">
+            <input id="join-form-submit" type="submit">
         </div>
     </form>
 
