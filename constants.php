@@ -1,3 +1,4 @@
+<!-- All constants for site are below. -->
 <?php
     $_SESSION['START'] = 0;
 	$_SESSION['SUCCESS'] = 1;
@@ -9,5 +10,5 @@
 	$_SESSION['EMAIL_FAILED_MSG'] = "Email Not Found, Try again.";
 	$_SESSION['PASSWORD_FAILED_MSG'] = "Password Not Found, Try again.";
 	$_SESSION['PASSWORD_PATTERN'] = "(([0-9]|[A-Z]|[a-z]){5,10}){1}";
-	$_SESSION['TIMEOUT'] = 30;	// Timeout in 30 minutes.
+	$_SESSION['TIMEOUT'] = 1800;	// Timeout in 30 minutes.
 ?>

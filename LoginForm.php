@@ -1,3 +1,4 @@
+<!-- Form used for login of users. -->
 <?php
 session_start();
 ?>
