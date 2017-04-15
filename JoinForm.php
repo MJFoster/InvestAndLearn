@@ -2,6 +2,26 @@
     session_start();
 ?>
 
+
+
+<html>
+<head>
+	<title>Invest And Learn</title>
+	<link rel="stylesheet" type="text/css" href="Styles/myStyles.css">
+	<link rel="stylesheet" href="Styles/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="icon" type="image/x-icon" href="Images/favicon.png">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.js"
+			integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+			crossorigin="anonymous">
+	</script>
+	<script type="text/javascript" src="Scripts/InvestAndLearn.js"></script>
+</head>
+
+<body>
+
+
+
+
 <div>
     <form id="join-form" method="POST" action="JoinHandler.php">
         <div class="form-inputs">
@@ -15,7 +35,7 @@
                         echo 'value="' . $_SESSION['userName'] . '"';
                     }
                 ?>
-                name="userName" required>
+                name="userName">  <!-- TODO:  add back in 'required' attribute on <input> tag -->
             
             <!-- Email format is validated with 'type=email' attribute -->
             <label for="userEmail" class="required">* User Email:  </label>
@@ -26,7 +46,7 @@
                         echo 'value="' . $_SESSION["userEmail"] . '"';
                     }
                 ?>
-                name="userEmail" required>
+                name="userEmail">      <!-- TODO:  add back in 'required' attribute on <input> tag -->
 
             <!-- Validate Password: Alphanumeric, no special chars, 5-10 chars inclusive permitted. -->
             <label for="user-password" class="required">* Password :  </label>
@@ -38,7 +58,7 @@
                     }
                 ?>
 
-                name="userPassword" required>
+                name="userPassword">    <!-- TODO:  add back in 'required' attribute on <input> tag -->
 
             <input id="join-form-submit" type="submit">
         </div>
@@ -74,3 +94,5 @@
     }
     ?>
 </div>
+
+</body>
