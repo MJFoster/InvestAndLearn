@@ -1,45 +1,25 @@
-// Using JQuery, a JavaScript framework
-$(function() {
-    // $("#login-form").submit(function(e) {
-    $("form").submit(function(e) {
+$(function() {      // Validate inputs
+
+    // Fade away logout message
+    $('#logged-out-state').delay(3000).fadeOut(3000);
+
+    // Fade away timeout message
+    $(document).click(function(e) {
+        $('#timed-out-state:visible').fadeOut(3000);
+    });
+
+    $(".user-form").submit(function(e) {  // function for any <form> element
         var userEmail = $("#user-email").val();
         var userPassword = $("#user-password").val();
         var userName = $("#user-name").val();
-        alert("InvestAndLearn.js ...\n");
         if(userEmail == ""  ||  userPassword == ""  ||  userName == "") {
             alert("You must enter something in each starred '*' input field.\n");
-            e.preventDefault();     // Prevents submission from happening.
+            e.preventDefault();     // Upon error, prevent submission of inputs to the database.
         }
     });
-    // validateLoginForm();
-    // validateJoinForm();
+
 });
 
-// function validateLoginForm() {
-//     var userEmail = $('user-email').val();
-//     var userPassword = $('#user-password').val();
-    
-//     $('#login-form-submit').click(function(e) {
-//         if(userEmail == ""  ||  userPassword == "") {
-//             alert("You must enter both an email and password to login.");
-//             e.preventDefault();     // Prevents submission from happening.
-//         }
-//     });
-// }
-
-// function validateJoinForm() {
-//     var userEmail = $('user-email').val();
-//     var userPassword = $('#user-password').val();
-//     var userName = $('#user-name').val();
-
-//     $('join-form-submit').onclick(function(e) {
-//         if(userEmail == ""  ||  userPassword == ""  ||  userName == "") {
-//             alert("You must enter a user name, email, and password to joing the club.");
-//             e.preventDefault();     // Prevents submission from happening.
-//         }
-//     })
-// }
-
-function contactUs() {
+function contactUs() {  // function called by 'Contact Us' <a> tag
     alert("Invest And Learn\n123Main Street\nBoise, ID  83702\n");
-}
+};

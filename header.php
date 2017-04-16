@@ -38,10 +38,7 @@
 	<link rel="stylesheet" type="text/css" href="Styles/myStyles.css">
 	<link rel="stylesheet" href="Styles/font-awesome-4.7.0/css/font-awesome.min.css">
 	<link rel="icon" type="image/x-icon" href="Images/favicon.png">
-	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.js"
-			integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
-			crossorigin="anonymous">
-	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 	<script type="text/javascript" src="Scripts/InvestAndLearn.js"></script>
 </head>
 
@@ -72,11 +69,14 @@
 		<!-- The user's login status, or state, is assessed below and corresponding message rendered. -->
 		<?php
 			if ($_SESSION['loginState'] == $_SESSION['SUCCESS']) {
-				echo "<div id='login-state-msg' class='dark-purple-text'>Welcome " 
+				echo "<div id='success-state' class='dark-purple-text login-state-msg'>Welcome " 
 					. $_SESSION['userName'] 
 					. "</div>";
 			} else if ($_SESSION['loginState'] == $_SESSION['LOGGED_OUT']) {
-				echo "<div id='login-state-msg' class='dark-purple-text'>Logged Out, Thanks For Visiting!</div>";
+				echo "<div id='logged-out-state' class='dark-purple-text login-state-msg'>Logged Out, Thanks For Visiting!</div>";
+			} else if ($_SESSION['loginState'] == $_SESSION['TIMED_OUT']) {
+				echo "<div id='timed-out-state' class='dark-purple-text login-state-msg'>*** You've Timed Out, Please Login Again</div>";
+				$_SESSION['loginState'] = $_SESSION['START'];
 			}
 		?>
 	</nav>

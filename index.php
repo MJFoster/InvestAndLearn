@@ -4,9 +4,6 @@
 
     include("header.php");
 ?>
-	
-
-
 
 <div class="main-content black-text">
     <img class="images" id="home-page-image" src="Images/blue-$$$.jpg" alt="Stacked Money">
@@ -33,10 +30,6 @@
 	</div>
 
 </div>
-
-
-
-
 
 <?php
     include("footer.php");

@@ -2,6 +2,6 @@
 <?php
     session_start();
     include("constants.php");
-    $_SESSION['loginState'] = $_SESSION['LOGGED_OUT'];
+    $_SESSION['loginState'] = $_SESSION['TIMED_OUT'];
     header("Location: index.php");
 ?>
