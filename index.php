@@ -2,7 +2,7 @@
 	$thisPage = "Home-Page";
 	$currentPage = $thisPage;
 
-    include("header.php");
+    include("Header.php");
 ?>
 
 <div class="main-content black-text">
@@ -32,5 +32,5 @@
 </div>
 
 <?php
-    include("footer.php");
+    include("Footer.php");
 ?>

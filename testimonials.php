@@ -1,7 +1,7 @@
 <?php
     $thisPage = "Testimonials-Page";
 	$currentPage = $thisPage;
-    include("header.php");
+    include("Header.php");
 ?>
 
 <div class="main-content">
@@ -35,5 +35,5 @@
 </div>
 
 <?php
-    include("footer.php");
+    include("Footer.php");
 ?>

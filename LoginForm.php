@@ -1,6 +1,6 @@
 <!-- Form used for login of users. -->
 <?php
-    include("header.php");
+    include("Header.php");
 ?>
     <div>
         <legend>User Login Form</legend>

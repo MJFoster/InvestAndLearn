@@ -1,5 +1,5 @@
 <?php
-    include("header.php");
+    include("Header.php");
 ?>
     <div>
         <form class="user-form" id="join-form" method="POST" action="JoinHandler.php">

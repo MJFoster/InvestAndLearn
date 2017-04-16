@@ -1,5 +1,5 @@
 <?php
-    include("header.php");
+    include("Header.php");
     $thisPage = "About-Us-Page";
 ?>
 
@@ -14,5 +14,5 @@
 </div>
 
 <?php
-    include("footer.php");
+    include("Footer.php");
 ?>
