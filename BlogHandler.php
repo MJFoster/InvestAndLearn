@@ -1,5 +1,6 @@
 <?php
-// Sanitizes and validates user login data.
+// Adds and deletes entries to underlying blogpost table.
+
 session_start();
 
 require_once 'Classes/Dao.php';
@@ -8,22 +9,19 @@ require_once 'Classes/KLogger.php';
 $dao = new Dao();
 $log = new KLogger("tmp/log.txt", KLogger::DEBUG);
 
-// Sanitize input data
-$_SESSION['userName'] = htmlentities($_POST['userName']);
-$_SESSION['userEmail'] = htmlentities($_POST['userEmail']);
-$_SESSION['userPassword'] = htmlentities($_POST['userPassword']);
-// $_SESSION['userAccess'] = htmlentities($_POST['userAccess']);    // TODO:  Add when 'admin' interface added ...
+// Sanitize input data from BlogPostForm
+$_SESSION['postText'] = htmlentities($_POST['postText']);
+$_SESSION['postLikes'] = htmlentitites($_POST['postLikes']);
+$_SESSION['postNotLikes'] = htmlentities($_POST['postNotLikes']);
 
-if($dao->addUser($_SESSION['userName'], $_SESSION['userPassword'], $_SESSION['userEmail'])) {
-    $log->LogDebug("addUser: New user successfully added.");
-    $_SESSION['loginState'] = $_SESSION['SUCCESS'];
+if($dao->addBlogPost($_SESSION['userEmail'], $_SESSION['userName'], $_SESSION['postText'], $_SESSION['postLikes'], $_SESSION['postNotLikes'])) {
+    $log->LogDebug("BlogHandler: New blogpost successfully added.");
 } else {
     $log->LogDebug("addUser: New user add failed.");
-    $_SESSION['loginState'] = $_SESSION['ADD_FAILED'];
 }
 $log->LogDebug("------------------");
 
-header("Location:JoinForm.php");
+header("Location:BlogForm.php");
 exit;
 
 

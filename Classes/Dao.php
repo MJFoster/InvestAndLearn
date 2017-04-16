@@ -50,12 +50,13 @@
     }
 
     
-    // Adds new user to 'user' table.
-    // Return true if added, otherwise false.
-    //
+    /* Adds new user to 'user' table.
+    * Return true if added, otherwise false.
+    */
     public function addUser($userName, $userPassword, $userEmail, $userAccess = GENERAL_ACCESS) { // GENERAL_ACCESS is default and optional
       $conn = $this->getConnection();
-      $addQuery = "insert into user (User_Email, User_Name, User_Password, User_Access) values (:userEmail, :userName, :userPassword, :userAccess);";
+      $addQuery = "insert into user (User_Email, User_Name, User_Password, User_Access) 
+                            values (:userEmail, :userName, :userPassword, :userAccess);";
       $q = $conn->prepare($addQuery);
       $q->bindParam(":userEmail", $userEmail);
       $q->bindParam(":userName", $userName);
@@ -69,5 +70,40 @@
         return false;
       }
     }
+
+
+    /* Searches 'blogpost' table for all blogPost records.
+    *  Returnsall records in an associative array, or false if none found.
+    */
+    public function getBlogPosts() {
+        $this->log->LogDebug("getBlogPosts: Searching for blogpost records ...");
+        $conn = $this->getConnection();
+        $queryString = "select * from blogpost;";
+        return $conn->query($queryString);  // PDO statement object returned if found, else 'false'.
+    }
+
+
+    /* Adds a record to 'blogpost' table.
+    * Return true if added, otherwise false.    
+    */
+    public function addBlogPost($postEmail, $postName, $postText, $postLikes, $postNotLikes) {
+      $conn->getConnection();
+      $addQuery = "insert into blogpost (Post_Email, Post_Name, Post_Date, Post_Text, Post_Likes, Post_NotLikes);
+                             values (:postEmail, :postName, current_date(), :postText, :postLikes, :postNotLikes);";
+      $q = $conn->prepare($addQuery);
+      $q->bindParam(":postEmail", $postEmail);
+      $q->bindParam(":postName", $postName);
+      $q->bindParam(":postText", $postText);
+      $q->bindParam(":postLikes", $postLikes);
+      $q->bindParam(":postNotLikes", $postNotLikes);
+      if ( $q->execute() ) {  // Execute MySQL call, returns true on success, else false.
+        $this->log->LogDebug("addBlogPost: Blogpost Added.");
+        return true;
+      } else {
+        $this->log->LogDebug("addBlogPost: Blogpost NOT added.");
+        return false;
+      }
+    }
+
   }
 

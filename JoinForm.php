@@ -4,7 +4,6 @@
     <div>
         <form class="user-form" id="join-form" method="POST" action="JoinHandler.php">
             <div class="form-inputs">
-                <h2>Thanks For Joining Invest And Learn!</h2>
 
                 <label for="userName" class="required">* User Name: </label>
                 <input id="user-name" type="text"
