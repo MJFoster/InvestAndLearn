@@ -4,7 +4,7 @@
 ?>
     <div>
         <legend>User Login Form</legend>
-        <form class="user-form" id="login-form" method="POST" action="LoginHandler.php">
+        <form class="get-form" id="login-form" method="POST" action="LoginHandler.php">
             <div class="form-inputs">
 
                 <label for="user-email" class="required">* User Email:  </label>

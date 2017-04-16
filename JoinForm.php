@@ -2,7 +2,7 @@
     include("Header.php");
 ?>
     <div>
-        <form class="user-form" id="join-form" method="POST" action="JoinHandler.php">
+        <form class="add-form" id="join-form" method="POST" action="JoinHandler.php">
             <div class="form-inputs">
 
                 <label for="userName" class="required">* User Name: </label>
@@ -50,7 +50,7 @@
                 break;
                 
             case $_SESSION['ADD_FAILED']:
-                echo "<div>Could not add new user ..."
+                echo "<div>JoinForm: ..."
                 . $_SESSION['ADD_RECORD_FAILED']
                 . "</div>";
                 break;

@@ -87,15 +87,13 @@
     * Return true if added, otherwise false.    
     */
     public function addBlogPost($postEmail, $postName, $postText, $postLikes, $postNotLikes) {
-      $conn->getConnection();
-      $addQuery = "insert into blogpost (Post_Email, Post_Name, Post_Date, Post_Text, Post_Likes, Post_NotLikes);
-                             values (:postEmail, :postName, current_date(), :postText, :postLikes, :postNotLikes);";
+      $conn = $this->getConnection();
+      $addQuery = "insert into blogpost (Post_Email, Post_Name, Post_Date, Post_Text)
+                             values (:postEmail, :postName, current_date(), :postText);";
       $q = $conn->prepare($addQuery);
       $q->bindParam(":postEmail", $postEmail);
       $q->bindParam(":postName", $postName);
       $q->bindParam(":postText", $postText);
-      $q->bindParam(":postLikes", $postLikes);
-      $q->bindParam(":postNotLikes", $postNotLikes);
       if ( $q->execute() ) {  // Execute MySQL call, returns true on success, else false.
         $this->log->LogDebug("addBlogPost: Blogpost Added.");
         return true;

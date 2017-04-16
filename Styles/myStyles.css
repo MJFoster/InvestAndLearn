@@ -74,6 +74,26 @@ nav a {
     text-decoration: underline;
 }
 
+.buttons {
+    background-color: #11CFFA;
+    color: rebeccapurple;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.buttons a {
+    text-decoration: none;
+}
+
+
+/* * * * * * * Forms * * * * * * */
+.get-form {
+    color: blue;
+}
+
+.add-form {
+    color: red;
+}
 
 /* * * * * * * Top Banner * * * * * * */
 #banner {
@@ -155,14 +175,11 @@ nav a {
 
 #testimonials-button {
     width: 10%;
-    font-weight: 600;
     margin-left: 76%;
     display: block;
 }
 
-#testimonials-button a {
-    text-decoration: none;
-}
+
 
 /* * * * * * * Testimonials Page * * * * * * */
 .testimonials-text {
@@ -233,6 +250,11 @@ nav a {
 #blog-author {
     text-align: right;
     padding-right: 5%;
+}
+
+#add-blog-button {
+    float: right;
+    margin: 5% 5% 0 0;
 }
 
 
