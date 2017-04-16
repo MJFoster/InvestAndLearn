@@ -38,7 +38,8 @@
 	<link rel="stylesheet" type="text/css" href="Styles/myStyles.css">
 	<link rel="stylesheet" href="Styles/font-awesome-4.7.0/css/font-awesome.min.css">
 	<link rel="icon" type="image/x-icon" href="Images/favicon.png">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script type="text/javascript" src="Scripts/InvestAndLearn.js"></script>
 </head>
 

@@ -1,7 +1,6 @@
 $(function() {      // Validate inputs
-
     // Fade away logout message
-    $('#logged-out-state').delay(3000).fadeOut(3000);
+    $('#logged-out-state').delay(2000).fadeOut(2000);
 
     // Fade away timeout message
     $(document).click(function(e) {
