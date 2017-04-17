@@ -74,6 +74,7 @@
 					. "</div>";
 			} else if ($_SESSION['loginState'] == $_SESSION['LOGGED_OUT']) {
 				echo "<div id='logged-out-state' class='dark-purple-text login-state-msg'>Logged Out, Thanks For Visiting!</div>";
+				$_SESSION['loginState'] = $_SESSION['START'];
 			} else if ($_SESSION['loginState'] == $_SESSION['TIMED_OUT']) {
 				echo "<div id='timed-out-state' class='dark-purple-text login-state-msg'>*** You've Timed Out, Please Login Again</div>";
 				$_SESSION['loginState'] = $_SESSION['START'];

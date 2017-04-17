@@ -23,7 +23,7 @@
         switch ($_SESSION['loginState']) {
 
             case $_SESSION['SUCCESS']:
-                echo "<div>"
+                echo "<div class='form-msg'>"
                 . $_SESSION['ADD_RECORD_SUCCEEDED']
                 . "</div>";
                 break;
