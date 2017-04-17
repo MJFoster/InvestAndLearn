@@ -66,7 +66,7 @@
 		<a href="CalendarPage.php" class="dark-purple-text" alt="Calendar">Events Calendar | </a>
 		<a href="BlogPage.php" class="dark-purple-text" alt="Blog">Blog</a>
 
-		 The user's login status, or state, is assessed below and corresponding message rendered. 
+		 <!--The user's login status, or state, is assessed below and corresponding message rendered. -->
 		<?php
 			if ($_SESSION['loginState'] == $_SESSION['SUCCESS']) {
 				echo "<div id='success-state' class='dark-purple-text login-state-msg'>Welcome " 
