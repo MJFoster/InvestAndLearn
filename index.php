@@ -3,9 +3,12 @@
 	$currentPage = $thisPage;
 
     include("Header.php");
+
+	phpinfo();
 ?>
 
-<div class="main-content black-text">
+
+<!--<div class="main-content black-text">
     <img class="images" id="home-page-image" src="Images/blue-$$$.jpg" alt="Stacked Money">
 	<div>
 		<div id="home-page-content" class="dark-purple-text">
@@ -29,7 +32,7 @@
 		<button id="testimonials-button" class="buttons"><a href="TestimonialsPage.php">Testimonials</a></button>
 	</div>
 
-</div>
+</div>-->
 
 <?php
     include("Footer.php");
