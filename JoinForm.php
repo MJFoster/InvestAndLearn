@@ -2,7 +2,7 @@
     include("Header.php");
 ?>
     <div>
-        <form class="add-form" id="join-form" method="POST" action="JoinHandler.php">
+        <form class="add-form user-form" id="join-form" method="POST" action="JoinHandler.php">
             <div class="form-inputs">
 
                 <label for="userName" class="required">* User Name: </label>

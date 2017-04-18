@@ -4,7 +4,7 @@
 ?>
 
 <div class="main-content dark-purple-text">
-    <div id="blog-container">
+    <div class="content-container">
         <?php
             if($_SESSION['loginState'] == $_SESSION['SUCCESS']) {
                 echo "<button id='add-blog-button' class='buttons'><span><a href='BlogForm.php'>Add New Blog Post</a></span></button>";
@@ -20,13 +20,38 @@
 
                     // TODO:  Add from db                    
                     $blogPostText = "Blog content from the database goes here 
+                    ...  Blog content from the database goes here
+                    ...  Blog content from the database goes here 
+                    ...  Blog content from the database goes here 
+                    ...  Blog content from the database goes here 
+                    ...  Blog content from the database goes here 
+                    ...  Blog content from the database goes here 
+                    ...  Blog content from the database goes here 
+                    ...  Blog content from the database goes here 
+                    ...  Blog content from the database goes here 
+                    ...  Blog content from the database goes here 
+                    ...  Blog content from the database goes here 
+                    ...  Blog content from the database goes here 
+                    ...  Blog content from the database goes here 
+                    ...  Blog content from the database goes here 
+                    ...  Blog content from the database goes here 
+                    ...  Blog content from the database goes here 
+                    ...  Blog content from the database goes here 
+                    ...  Blog content from the database goes here 
+                    ...  Blog content from the database goes here 
+                    ...  Blog content from the database goes here 
+                    ...  Blog content from the database goes here 
+                    ...  Blog content from the database goes here 
+                    ...  Blog content from the database goes here 
+                    ...  Blog content from the database goes here 
+                    ...  Blog content from the database goes here 
                     ...  Blog content from the database goes here 
                     ...  Blog content from the database goes here 
                     ...  Blog content from the database goes here 
                     ...  Blog content from the database goes here 
                     ...  Blog content from the database goes here 
                     ...  Blog content from the database goes here ";
-                    echo "<p class=\"testimonials-text\" id=\"blog-text\">$blogPostText</p>";   
+                    echo "<p class=\"testimonials-text scrollable\">$blogPostText</p>";   
                     
                     $blogPostAuthor = "Mickey Mouse";       // TODO:  Add from db
                     echo "<p id=\"blog-author\">- $blogPostAuthor</p>";
