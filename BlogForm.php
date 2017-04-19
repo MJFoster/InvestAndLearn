@@ -15,45 +15,9 @@
                     ?>
                     name="postText" required>
 
-                <input id="join-form-submit" type="submit">
+                <input id="add-form-submit" type="submit">
             </div>
         </form>
-
-        <?php
-        switch ($_SESSION['loginState']) {
-
-            case $_SESSION['SUCCESS']:
-                echo "<div class='form-msg'>"
-                . $_SESSION['ADD_RECORD_SUCCEEDED']
-                . "</div>";
-                $_SESSION['loginState'] = $_SESSION['START'];
-                break;
-                
-            case $_SESSION['ADD_FAILED']:
-                echo "<div>BlogForm: ..."
-                . $_SESSION['ADD_RECORD_FAILED']
-                . "</div>";
-                break;
-
-            case $_SESSION['EMAIL_FAILED']:
-                break;
-
-            case $_SESSION['PASSWORD_FAILED']:
-                break;
-
-            case $_SESSION['START']:
-                break;
-
-            case $_SESSION['LOGGED_OUT']:
-                break;
-
-             case $_SESSION['TIMED_OUT']:
-                break; // no message.
-           
-            default:
-                echo "<div class='alert-message'>Invalid loginState</div>";
-        }
-        ?>
     </div>
 
 </body>

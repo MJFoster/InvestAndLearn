@@ -1,10 +1,10 @@
 <?php
     session_start();
-    session_unset();
+    session_destroy();
+    session_start();
 
     include("Constants.php");
     $_SESSION['loginState'] = $_SESSION['LOGGED_OUT'];
     
-    $_SESSION['lastActivity'] = time();
     header("Location:index.php");
 ?>

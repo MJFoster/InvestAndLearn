@@ -38,7 +38,7 @@
 
                     name="userPassword" required>
 
-                <input id="join-form-submit" type="submit">
+                <input id="add-form-submit" type="submit">
             </div>
         </form>
 

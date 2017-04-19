@@ -15,8 +15,8 @@ $_SESSION['userPassword'] = htmlentities($_POST['userPassword']);
 // $_SESSION['userAccess'] = htmlentities($_POST['userAccess']);    // TODO:  Add when 'admin' interface added ...
 
 
-// if loginState != TIMED_OUT, proceed, else redirect to index.php
-if($_SESSION['loginState'] != $_SESSION['TIMED_OUT']) {
+// if loginState != LOGGED_OUT, proceed, else redirect to index.php
+if($_SESSION['loginState'] != $_SESSION['LOGGED_OUT']) {
     if($dao->addUser($_SESSION['userName'], $_SESSION['userPassword'], $_SESSION['userEmail'])) {
         $log->LogDebug("addUser: New user successfully added.");
         $_SESSION['loginState'] = $_SESSION['SUCCESS'];

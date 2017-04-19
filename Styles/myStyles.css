@@ -99,11 +99,14 @@ nav a {
 
 
 /* * * * * * * Forms * * * * * * */
-.get-form {
-    color: blue;
+.get-form, .add-form {
+    color: rebeccapurple;
 }
 
-.add-form {
+
+.form-msg {
+    float: right;
+    margin: 5% 5% 0 0;
     color: red;
 }
 

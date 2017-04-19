@@ -14,12 +14,12 @@
 
 	// Keep track of last activity on the site to close down the session and destroy it for future visitors.
 	if ( isset($_SESSION['lastActivity'])  &&  ((time() - $_SESSION['lastActivity']) > $_SESSION['TIMEOUT']) ) {
-		setcookie("TimedOut", 1);		// $_COOKIE['TimedOut'] to be accessed by jQuery before any form submissions.	
-		$timeout = $_COOKIE["TimedOut"];	
-		$log->LogDebug("Header.php: TimeOut Cookie is: " . $timeout . "\n");
+		// setcookie("TimedOut", 1);		// $_COOKIE['TimedOut'] to be accessed by jQuery before any form submissions.	
+		// $timeout = $_COOKIE["TimedOut"];	
+		// $log->LogDebug("Header.php: TimeOut Cookie is: " . $timeout . "\n");
 		$log->LogDebug("Header.php: TIMED OUT at: " . time() . "\nLast Activity was: " . $_SESSION['lastActivity'] . "\n------------------");
-		session_unset();
-		header("Location: Timeout.php");
+		// session_unset();
+		header("Location: LogoutHandler.php");
 	}
 	
 	$_SESSION['lastActivity'] = time();
@@ -78,10 +78,11 @@
 			} else if ($_SESSION['loginState'] == $_SESSION['LOGGED_OUT']) {
 				echo "<div id='logged-out-state' class='dark-purple-text login-state-msg'>Logged Out, Thanks For Visiting!</div>";
 				$_SESSION['loginState'] = $_SESSION['START'];
-			} else if ($_SESSION['loginState'] == $_SESSION['TIMED_OUT']) {
-				echo "<a href='LoginForm.php' id='timed-out-state' class='dark-purple-text login-state-msg'>*** Timed Out, Please Login Again</a>";
-				$_SESSION['loginState'] = $_SESSION['START'];
 			}
+			//  else if ($_SESSION['loginState'] == $_SESSION['TIMED_OUT']) {
+			// 	echo "<a href='LoginForm.php' id='timed-out-state' class='dark-purple-text login-state-msg'>*** Timed Out, Please Login Again</a>";
+			// 	$_SESSION['loginState'] = $_SESSION['START'];
+			// }
 			$log->LogDebug("Header.php: End of page loginState : " . $_SESSION['loginState'] . "\n------------------");
 		?>
 	</nav>

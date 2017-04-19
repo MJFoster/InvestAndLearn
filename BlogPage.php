@@ -1,6 +1,10 @@
 <?php
     include("Header.php");
     $thisPage = "Blog-Page";
+
+    if ( !isset($_SESSION['blogAddState'] )) {
+        $_SESSION['blogAddState'] = $_SESSION['START'];
+    }
 ?>
 
 <div class="main-content dark-purple-text">
@@ -9,7 +13,29 @@
             if($_SESSION['loginState'] == $_SESSION['SUCCESS']) {
                 echo "<button id='add-blog-button' class='buttons'><span><a href='BlogForm.php'>Add New Blog Post</a></span></button>";
             }
+
+            switch ($_SESSION['blogAddState']) {
+
+                case $_SESSION['SUCCESS']:
+                    echo "<div class='form-msg'>"
+                        . $_SESSION['ADD_RECORD_SUCCEEDED']
+                        . "</div>";
+                    break;
+
+                case $_SESSION['ADD_FAILED']:
+                    echo "<div class='form-msg'>"
+                        . $_SESSION['ADD_RECORD_FAILED']
+                        . "</div>";
+                    break;
+            
+                case $_SESSION['START']:
+                    break;
+
+                default:
+                    break;
+            }        
         ?>
+
         <div>Invest And Learn Blog</div>
 
         <ul>
