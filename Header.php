@@ -14,13 +14,16 @@
 
 	// Keep track of last activity on the site to close down the session and destroy it for future visitors.
 	if ( isset($_SESSION['lastActivity'])  &&  ((time() - $_SESSION['lastActivity']) > $_SESSION['TIMEOUT']) ) {
+		setcookie("TimedOut", 1);		// $_COOKIE['TimedOut'] to be accessed by jQuery before any form submissions.	
+		$timeout = $_COOKIE["TimedOut"];	
+		$log->LogDebug("Header.php: TimeOut Cookie is: " . $timeout . "\n");
 		$log->LogDebug("Header.php: TIMED OUT at: " . time() . "\nLast Activity was: " . $_SESSION['lastActivity'] . "\n------------------");
 		session_unset();
-		session_destroy();
 		header("Location: Timeout.php");
 	}
-
+	
 	$_SESSION['lastActivity'] = time();
+
 	$log->LogDebug("Header.php: Last Activity: " . $_SESSION['lastActivity'] . "\n------------------");
 
 	// Initialize START states
@@ -66,7 +69,7 @@
 		<a href="CalendarPage.php" class="dark-purple-text" alt="Calendar">Events Calendar | </a>
 		<a href="BlogPage.php" class="dark-purple-text" alt="Blog">Blog</a>
 
-		 <!--The user's login status, or state, is assessed below and corresponding message rendered. -->
+		 <!--The user's login state is assessed below and corresponding message rendered. -->
 		<?php
 			if ($_SESSION['loginState'] == $_SESSION['SUCCESS']) {
 				echo "<div id='success-state' class='dark-purple-text login-state-msg'>Welcome " 
@@ -76,9 +79,10 @@
 				echo "<div id='logged-out-state' class='dark-purple-text login-state-msg'>Logged Out, Thanks For Visiting!</div>";
 				$_SESSION['loginState'] = $_SESSION['START'];
 			} else if ($_SESSION['loginState'] == $_SESSION['TIMED_OUT']) {
-				echo "<div id='timed-out-state' class='dark-purple-text login-state-msg'>*** You've Timed Out, Please Login Again</div>";
+				echo "<a href='LoginForm.php' id='timed-out-state' class='dark-purple-text login-state-msg'>*** Timed Out, Please Login Again</a>";
 				$_SESSION['loginState'] = $_SESSION['START'];
 			}
+			$log->LogDebug("Header.php: End of page loginState : " . $_SESSION['loginState'] . "\n------------------");
 		?>
 	</nav>
 

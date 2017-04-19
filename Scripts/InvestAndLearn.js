@@ -6,11 +6,11 @@ $(function() {      // Validate inputs
     $('.form-msg').fadeOut(4000);
 
     // Fade away timeout message from any click on DOM
-    $(document).click(function(e) {
-        $('#timed-out-state:visible').fadeOut(4000);
+    $(document).click(function() {
+        $('#timed-out-state').fadeOut(4000);
     });
 
-    $(".user-form").submit(function(e) {  // function for any class 'user-form' element
+    $(".user-form").submit(function(e) {  // function to execute upon 'submit' of any 'user-form' class element
         var userEmail = $("#user-email").val();
         var userPassword = $("#user-password").val();
         var userName = $("#user-name").val();
@@ -20,6 +20,21 @@ $(function() {      // Validate inputs
         }
     });
 
+    var timedOutCookie = document.cookie.split(";");
+    var timedOut = timedOutCookie.split("=");
+    
+    if(timedOut[1] == "1") {
+        alert("Timed out == 1");
+        alert("timedOut[0]: " + timedOut[0] + ", timedOut[1]: " + timedOut[1]);
+        disableAddSubmits();
+    } else {
+        alert("Timed out != 1");
+        alert("timedOut[0]: " + timedOut[0] + ", timedOut[1]: " + timedOut[1]);
+    }
+
+    function disableAddSubmits() {
+        $('.add-form').attr("disabled");
+    }
 });
 
 function contactUs() {  // function called by 'Contact Us' <a> tag

@@ -14,16 +14,22 @@ $_SESSION['userEmail'] = htmlentities($_POST['userEmail']);
 $_SESSION['userPassword'] = htmlentities($_POST['userPassword']);
 // $_SESSION['userAccess'] = htmlentities($_POST['userAccess']);    // TODO:  Add when 'admin' interface added ...
 
-if($dao->addUser($_SESSION['userName'], $_SESSION['userPassword'], $_SESSION['userEmail'])) {
-    $log->LogDebug("addUser: New user successfully added.");
-    $_SESSION['loginState'] = $_SESSION['SUCCESS'];
-} else {
-    $log->LogDebug("addUser: New user add failed.");
-    $_SESSION['loginState'] = $_SESSION['ADD_FAILED'];
-}
-$log->LogDebug("------------------");
 
-header("Location:JoinForm.php");
+// if loginState != TIMED_OUT, proceed, else redirect to index.php
+if($_SESSION['loginState'] != $_SESSION['TIMED_OUT']) {
+    if($dao->addUser($_SESSION['userName'], $_SESSION['userPassword'], $_SESSION['userEmail'])) {
+        $log->LogDebug("addUser: New user successfully added.");
+        $_SESSION['loginState'] = $_SESSION['SUCCESS'];
+    } else {
+        $log->LogDebug("addUser: New user add failed.");
+        $_SESSION['loginState'] = $_SESSION['ADD_FAILED'];
+    }
+    $log->LogDebug("------------------");
+
+    header("Location:JoinForm.php");
+} else {
+    header("Location:index.php");
+}
 exit;
 
 

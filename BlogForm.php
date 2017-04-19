@@ -26,6 +26,7 @@
                 echo "<div class='form-msg'>"
                 . $_SESSION['ADD_RECORD_SUCCEEDED']
                 . "</div>";
+                $_SESSION['loginState'] = $_SESSION['START'];
                 break;
                 
             case $_SESSION['ADD_FAILED']:
