@@ -42,6 +42,7 @@
 	<link rel="stylesheet" href="Styles/font-awesome-4.7.0/css/font-awesome.min.css">
 	<link rel="icon" type="image/x-icon" href="Images/favicon.png">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="Scripts/js.cookie.js"></script>
 	<script type="text/javascript" src="Scripts/InvestAndLearn.js"></script>
 </head>
 

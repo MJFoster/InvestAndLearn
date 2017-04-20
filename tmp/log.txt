@@ -1,0 +1,257 @@
+now - DEBUG --> Header.php: Last Activity: 1492651374
+------------------ 
+now - DEBUG --> Header.php: End of page loginState : 0
+------------------ 
+now - DEBUG --> Header.php: Last Activity: 1492651379
+------------------ 
+now - DEBUG --> Header.php: End of page loginState : 0
+------------------ 
+now - DEBUG --> Header.php: Last Activity: 1492651384
+------------------ 
+now - DEBUG --> Header.php: End of page loginState : 0
+------------------ 
+now - DEBUG --> getUser: Searching for email in database...mj@mj.com 
+now - DEBUG --> getConnection: Attempting database connection... 
+now - DEBUG --> getConnection: Success, database connected! 
+now - DEBUG --> LoginHandler: User EMAIL Matched!
+
+Searching For: mj@mj.com
+
+Found: MJ@MJ.com
+ 
+now - DEBUG --> LoginHandler: User PASSWORD Matched!
+
+Searching For: 11111
+
+Found: 11111
+ 
+now - DEBUG --> LoginHandler: $_SESSION Updated
+userName: MaryJo
+userAccess: 1
+loginState: 1
+ 
+now - DEBUG --> ------------------ 
+now - DEBUG --> Header.php: Last Activity: 1492651391
+------------------ 
+now - DEBUG --> Header.php: End of page loginState : 1
+------------------ 
+now - DEBUG --> Header.php: Last Activity: 1492651391
+------------------ 
+now - DEBUG --> Header.php: End of page loginState : 1
+------------------ 
+now - DEBUG --> Header.php: Last Activity: 1492651394
+------------------ 
+now - DEBUG --> Header.php: End of page loginState : 1
+------------------ 
+now - DEBUG --> BlogPage.php: blogAddState = 0
+------------------ 
+now - DEBUG --> Header.php: Last Activity: 1492651397
+------------------ 
+now - DEBUG --> Header.php: End of page loginState : 1
+------------------ 
+now - DEBUG --> getConnection: Attempting database connection... 
+now - DEBUG --> getConnection: Success, database connected! 
+now - DEBUG --> addBlogPost: Blogpost Added. 
+now - DEBUG --> BlogHandler: New blogpost successfully added. 
+now - DEBUG --> ------------------ 
+now - DEBUG --> Header.php: Last Activity: 1492651402
+------------------ 
+now - DEBUG --> Header.php: End of page loginState : 1
+------------------ 
+now - DEBUG --> BlogPage.php: blogAddState = 1
+------------------ 
+now - DEBUG --> Header.php: Last Activity: 1492651441
+------------------ 
+now - DEBUG --> Header.php: End of page loginState : 1
+------------------ 
+now - DEBUG --> BlogPage.php: blogAddState = 1
+------------------ 
+now - DEBUG --> Header.php: Last Activity: 1492651444
+------------------ 
+now - DEBUG --> Header.php: End of page loginState : 1
+------------------ 
+now - DEBUG --> getConnection: Attempting database connection... 
+now - DEBUG --> getConnection: Success, database connected! 
+now - DEBUG --> addBlogPost: Blogpost Added. 
+now - DEBUG --> BlogHandler: New blogpost successfully added. 
+now - DEBUG --> ------------------ 
+now - DEBUG --> Header.php: Last Activity: 1492651449
+------------------ 
+now - DEBUG --> Header.php: End of page loginState : 1
+------------------ 
+now - DEBUG --> BlogPage.php: blogAddState = 1
+------------------ 
+now - DEBUG --> Header.php: Last Activity: 1492651556
+------------------ 
+now - DEBUG --> Header.php: End of page loginState : 1
+------------------ 
+now - DEBUG --> BlogPage.php: blogAddState = 1
+------------------ 
+now - DEBUG --> Header.php: Last Activity: 1492651565
+------------------ 
+now - DEBUG --> Header.php: End of page loginState : 1
+------------------ 
+now - DEBUG --> BlogPage.php: blogAddState = 1
+------------------ 
+now - DEBUG --> Header.php: Last Activity: 1492651865
+------------------ 
+now - DEBUG --> Header.php: End of page loginState : 1
+------------------ 
+now - DEBUG --> BlogPage.php: blogAddState = 1
+------------------ 
+now - DEBUG --> Header.php: Last Activity: 1492651889
+------------------ 
+now - DEBUG --> Header.php: End of page loginState : 1
+------------------ 
+now - DEBUG --> BlogPage.php: blogAddState = 1
+------------------ 
+now - DEBUG --> Header.php: Last Activity: 1492651897
+------------------ 
+now - DEBUG --> Header.php: End of page loginState : 1
+------------------ 
+now - DEBUG --> getConnection: Attempting database connection... 
+now - DEBUG --> getConnection: Success, database connected! 
+now - DEBUG --> addBlogPost: Blogpost Added. 
+now - DEBUG --> BlogHandler: New blogpost successfully added. 
+now - DEBUG --> ------------------ 
+now - DEBUG --> Header.php: Last Activity: 1492651907
+------------------ 
+now - DEBUG --> Header.php: End of page loginState : 1
+------------------ 
+now - DEBUG --> BlogPage.php: blogAddState = 1
+------------------ 
+now - DEBUG --> Header.php: Last Activity: 1492651929
+------------------ 
+now - DEBUG --> Header.php: End of page loginState : 1
+------------------ 
+now - DEBUG --> BlogPage.php: blogAddState = 1
+------------------ 
+now - DEBUG --> Header.php: Last Activity: 1492651933
+------------------ 
+now - DEBUG --> Header.php: End of page loginState : 1
+------------------ 
+now - DEBUG --> BlogPage.php: blogAddState = 1
+------------------ 
+now - DEBUG --> Header.php: Last Activity: 1492651936
+------------------ 
+now - DEBUG --> Header.php: End of page loginState : 1
+------------------ 
+now - DEBUG --> getConnection: Attempting database connection... 
+now - DEBUG --> getConnection: Success, database connected! 
+now - DEBUG --> addBlogPost: Blogpost Added. 
+now - DEBUG --> BlogHandler: New blogpost successfully added. 
+now - DEBUG --> ------------------ 
+now - DEBUG --> Header.php: Last Activity: 1492651942
+------------------ 
+now - DEBUG --> Header.php: End of page loginState : 1
+------------------ 
+now - DEBUG --> BlogPage.php: blogAddState = 1
+------------------ 
+now - DEBUG --> Header.php: Last Activity: 1492652007
+------------------ 
+now - DEBUG --> Header.php: End of page loginState : 1
+------------------ 
+now - DEBUG --> BlogPage.php: blogAddState = 1
+------------------ 
+now - DEBUG --> Header.php: Last Activity: 1492652042
+------------------ 
+now - DEBUG --> Header.php: End of page loginState : 1
+------------------ 
+now - DEBUG --> getConnection: Attempting database connection... 
+now - DEBUG --> getConnection: Success, database connected! 
+now - DEBUG --> addBlogPost: Blogpost Added. 
+now - DEBUG --> BlogHandler: New blogpost successfully added. 
+now - DEBUG --> ------------------ 
+now - DEBUG --> Header.php: Last Activity: 1492652046
+------------------ 
+now - DEBUG --> Header.php: End of page loginState : 1
+------------------ 
+now - DEBUG --> BlogPage.php: blogAddState = 1
+------------------ 
+now - DEBUG --> Header.php: Last Activity: 1492652051
+------------------ 
+now - DEBUG --> Header.php: End of page loginState : 1
+------------------ 
+now - DEBUG --> getConnection: Attempting database connection... 
+now - DEBUG --> getConnection: Success, database connected! 
+now - DEBUG --> addBlogPost: Blogpost Added. 
+now - DEBUG --> BlogHandler: New blogpost successfully added. 
+now - DEBUG --> ------------------ 
+now - DEBUG --> Header.php: Last Activity: 1492652056
+------------------ 
+now - DEBUG --> Header.php: End of page loginState : 1
+------------------ 
+now - DEBUG --> BlogPage.php: blogAddState = 1
+------------------ 
+now - DEBUG --> Header.php: Last Activity: 1492652058
+------------------ 
+now - DEBUG --> Header.php: End of page loginState : 0
+------------------ 
+now - DEBUG --> Header.php: Last Activity: 1492652144
+------------------ 
+now - DEBUG --> Header.php: End of page loginState : 0
+------------------ 
+now - DEBUG --> Header.php: Last Activity: 1492652159
+------------------ 
+now - DEBUG --> Header.php: End of page loginState : 0
+------------------ 
+now - DEBUG --> BlogPage.php: blogAddState = 0
+------------------ 
+now - DEBUG --> Header.php: Last Activity: 1492652166
+------------------ 
+now - DEBUG --> Header.php: End of page loginState : 0
+------------------ 
+now - DEBUG --> getUser: Searching for email in database...mj@mj.com 
+now - DEBUG --> getConnection: Attempting database connection... 
+now - DEBUG --> getConnection: Success, database connected! 
+now - DEBUG --> LoginHandler: User EMAIL Matched!
+
+Searching For: mj@mj.com
+
+Found: MJ@MJ.com
+ 
+now - DEBUG --> LoginHandler: User PASSWORD Matched!
+
+Searching For: 11111
+
+Found: 11111
+ 
+now - DEBUG --> LoginHandler: $_SESSION Updated
+userName: MaryJo
+userAccess: 1
+loginState: 1
+ 
+now - DEBUG --> ------------------ 
+now - DEBUG --> Header.php: Last Activity: 1492652175
+------------------ 
+now - DEBUG --> Header.php: End of page loginState : 1
+------------------ 
+now - DEBUG --> Header.php: Last Activity: 1492652175
+------------------ 
+now - DEBUG --> Header.php: End of page loginState : 1
+------------------ 
+now - DEBUG --> Header.php: Last Activity: 1492652180
+------------------ 
+now - DEBUG --> Header.php: End of page loginState : 1
+------------------ 
+now - DEBUG --> BlogPage.php: blogAddState = 0
+------------------ 
+now - DEBUG --> Header.php: Last Activity: 1492652184
+------------------ 
+now - DEBUG --> Header.php: End of page loginState : 1
+------------------ 
+now - DEBUG --> getConnection: Attempting database connection... 
+now - DEBUG --> getConnection: Success, database connected! 
+now - DEBUG --> addBlogPost: Blogpost Added. 
+now - DEBUG --> BlogHandler: New blogpost successfully added. 
+now - DEBUG --> ------------------ 
+now - DEBUG --> Header.php: Last Activity: 1492652192
+------------------ 
+now - DEBUG --> Header.php: End of page loginState : 1
+------------------ 
+now - DEBUG --> BlogPage.php: blogAddState = 1
+------------------ 
+now - DEBUG --> Header.php: Last Activity: 1492652203
+------------------ 
+now - DEBUG --> Header.php: End of page loginState : 0
+------------------ 

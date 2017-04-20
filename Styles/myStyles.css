@@ -97,17 +97,24 @@ nav a {
     overflow: auto;
 }
 
+.messages {
+    width: 15%;
+    float: right;
+    padding-top: 2%;
+}
+
+.messages div, .messages button {
+    padding: 2% 1% 0 0;
+}
 
 /* * * * * * * Forms * * * * * * */
 .get-form, .add-form {
     color: rebeccapurple;
 }
 
-
 .form-msg {
-    float: right;
-    margin: 5% 5% 0 0;
     color: red;
+    display: none;
 }
 
 /* * * * * * * Top Banner * * * * * * */
@@ -252,11 +259,6 @@ nav a {
 #blog-author {
     text-align: right;
     padding-right: 5%;
-}
-
-#add-blog-button {
-    float: right;
-    margin: 5% 5% 0 0;
 }
 
 
