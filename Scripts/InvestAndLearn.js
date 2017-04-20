@@ -3,7 +3,7 @@ $(function() {      // Validate inputs
     $('#logged-out-state').fadeOut(4000);
 
     // Fade away form messages
-    $('.form-msg:visible').fadeOut(4000);
+    // $('.form-msg:visible').fadeOut(4000);
 
     // Reset each add form cookies state and hide message on screen
     // TODO:  Implement remaining ck_____AddState cookies.
@@ -34,37 +34,37 @@ function contactUs() {  // function called by 'Contact Us' <a> tag
 
 // Hide or show form message, depending on state, 
 // then reset cookie's state to START.
-function resetAddState(cname) {
+// function resetAddState(cname) {
    
-    var state = Cookies.get(cname);
-    // alert(cname + " CURRENT value: " + state);
+//     var state = Cookies.get(cname);
+//     // alert(cname + " CURRENT value: " + state);
    
-    var START = 0;
-    var SUCCESS = 1;
-    var FAILURE = -3
+//     var START = 0;
+//     var SUCCESS = 1;
+//     var FAILURE = -3
 
-    switch (state) {
-        case SUCCESS:
-			// alert("SUCCESS message should show ...");
-            // $('.failed').hide();
-            $('.succeeded').show();
-            break;
+//     switch (state) {
+//         case SUCCESS:
+// 			// alert("SUCCESS message should show ...");
+//             // $('.failed').hide();
+//             $('.succeeded').show();
+//             break;
 
-        case FAILURE:
-			// alert("FAIL message should show ...");
-            $('.succeeded').hide();     
-            // $('.failed').show();
-            break;
+//         case FAILURE:
+// 			// alert("FAIL message should show ...");
+//             $('.succeeded').hide();     
+//             // $('.failed').show();
+//             break;
 
-        default:
-            break;
-    };
+//         default:
+//             break;
+//     };
 
-	Cookies.set(cname, '');
-    Cookies.set(cname, '0');
-	state = Cookies.get(cname);
-	// alert(cname + " s/b (0), value: " + state);
-}
+// 	Cookies.set(cname, '');
+//     Cookies.set(cname, '0');
+// 	state = Cookies.get(cname);
+// 	// alert(cname + " s/b (0), value: " + state);
+// }
 
 
 

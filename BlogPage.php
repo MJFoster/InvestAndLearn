@@ -4,28 +4,28 @@
 
     $log = new KLogger("tmp/log.txt", KLogger::DEBUG);
 
-    if ( !isset($_SESSION['blogAddState'] )) {
-        $_SESSION['blogAddState'] = $_SESSION['START'];
-    }
+    // if ( !isset($_SESSION['blogAddState'] )) {
+    //     $_SESSION['blogAddState'] = $_SESSION['START'];
+    // }
 
     // Set cookie for blogAddState message
-    switch ($_SESSION['blogAddState']) {
+    // switch ($_SESSION['blogAddState']) {
 
-        case $_SESSION['SUCCESS']:
-            setcookie("ckBlogAddState", $_SESSION['SUCCESS']);
-            break;
+    //     case $_SESSION['SUCCESS']:
+    //         setcookie("ckBlogAddState", $_SESSION['SUCCESS']);
+    //         break;
 
-        case $_SESSION['ADD_FAILED']:
-            setcookie("ckBlogAddState", $_SESSION['ADD_FAILED']);
-            break;
+    //     case $_SESSION['ADD_FAILED']:
+    //         setcookie("ckBlogAddState", $_SESSION['ADD_FAILED']);
+    //         break;
     
-        case $_SESSION['START']:
-            setcookie("ckBlogAddState", $_SESSION['START']);
-            break;
+    //     case $_SESSION['START']:
+    //         setcookie("ckBlogAddState", $_SESSION['START']);
+    //         break;
 
-        default:
-            break;
-    }
+    //     default:
+    //         break;
+    // }
 
 
 ?>
@@ -38,10 +38,10 @@
                 echo "<button id='add-blog-button' class='buttons'><span><a href='BlogForm.php'>Add New Blog Post</a></span></button>";
             }
 
-            echo "<div class='form-msg succeeded'>". $_SESSION['ADD_RECORD_SUCCEEDED'] . "</div>";
+            // echo "<div class='form-msg succeeded'>". $_SESSION['ADD_RECORD_SUCCEEDED'] . "</div>";
             // echo "<div class='form-msg failed'>" . $_SESSION['ADD_RECORD_FAILED'] . "</div>";
 
-            $log->LogDebug("BlogPage.php: blogAddState = " . $_SESSION['blogAddState'] . "\n------------------");
+            // $log->LogDebug("BlogPage.php: blogAddState = " . $_SESSION['blogAddState'] . "\n------------------");
         ?>
     </div>
 
