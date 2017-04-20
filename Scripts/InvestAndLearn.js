@@ -32,45 +32,12 @@ function contactUs() {  // function called by 'Contact Us' <a> tag
     alert("Invest And Learn\n123Main Street\nBoise, ID  83702\n");
 };
 
-// Returns a string representing the value of the given cookie.
-// function getCookie(cname) {
-//     var name = cname + "=";
-//     var decodedCookie = decodeURIComponent(document.cookie);
-//     var ca = decodedCookie.split(';');
-//     for(var i = 0; i <ca.length; i++) {
-//         var c = ca[i];
-//         while (c.charAt(0) == ' ') {
-//             c = c.substring(1);
-//         }
-//         if (c.indexOf(name) == 0) {
-//             return c.substring(name.length, c.length);
-//         }
-//     }
-//     return "";
-// }
-
-
-// Sets a cookie with a value and expiration time in days.
-// function setCookie(cname, cvalue, exdays) {
-//     var d = new Date();
-//     d.setTime(d.getTime() + (exdays*24*60*60*1000));
-//     var expires = "expires="+ d.toUTCString();
-//     alert("expires String: " + expires
-//       + "\ncookie name: " + cname
-//       + "\ncookie value: " + cvalue);
-//     // document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-//     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-//     newValue = getCookie(cname);
-//     alert("setCookie() - new value s/b : " + cvalue + "Value is: " + newValue);
-// }
-
 // Hide or show form message, depending on state, 
-// and reset cookie's state to START.
+// then reset cookie's state to START.
 function resetAddState(cname) {
    
-    // var state = getCookie(cname);
     var state = Cookies.get(cname);
-    // alert("Cookies.get() value: " + state);
+    // alert(cname + " CURRENT value: " + state);
    
     var START = 0;
     var SUCCESS = 1;
@@ -78,29 +45,25 @@ function resetAddState(cname) {
 
     switch (state) {
         case SUCCESS:
-            $('.failed').hide();
-            // alert("Add succeeded...");
-            $('.form-msg.succeeded').show();
+			// alert("SUCCESS message should show ...");
+            // $('.failed').hide();
+            $('.succeeded').show();
             break;
 
         case FAILURE:
+			// alert("FAIL message should show ...");
             $('.succeeded').hide();     
-            // alert("Add failed...");   
-            $('.form-msg.failed').show();
-            break;
-
-        case START:
-            // alert ("START ... do nothing.");
-            $('.form-msg:visible').hide();            
+            // $('.failed').show();
             break;
 
         default:
-            $('.form-msg:visible').hide();
             break;
     };
 
-    Cookies.set(cname, START, { expires : 1 });
-    // alert("resetAddState() : Cookies NEW value: " + Cookies.get(cname));
+	Cookies.set(cname, '');
+    Cookies.set(cname, '0');
+	state = Cookies.get(cname);
+	// alert(cname + " s/b (0), value: " + state);
 }
 
 

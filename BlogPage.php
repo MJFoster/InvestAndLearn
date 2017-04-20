@@ -2,11 +2,32 @@
     include("Header.php");
     $thisPage = "Blog-Page";
 
+    $log = new KLogger("tmp/log.txt", KLogger::DEBUG);
+
     if ( !isset($_SESSION['blogAddState'] )) {
         $_SESSION['blogAddState'] = $_SESSION['START'];
     }
 
-    $log = new KLogger("tmp/log.txt", KLogger::DEBUG);
+    // Set cookie for blogAddState message
+    switch ($_SESSION['blogAddState']) {
+
+        case $_SESSION['SUCCESS']:
+            setcookie("ckBlogAddState", $_SESSION['SUCCESS']);
+            break;
+
+        case $_SESSION['ADD_FAILED']:
+            setcookie("ckBlogAddState", $_SESSION['ADD_FAILED']);
+            break;
+    
+        case $_SESSION['START']:
+            setcookie("ckBlogAddState", $_SESSION['START']);
+            break;
+
+        default:
+            break;
+    }
+
+
 ?>
 
 <div class="main-content dark-purple-text">
@@ -18,27 +39,7 @@
             }
 
             echo "<div class='form-msg succeeded'>". $_SESSION['ADD_RECORD_SUCCEEDED'] . "</div>";
-            echo "<div class='form-msg failed'>" . $_SESSION['ADD_RECORD_FAILED'] . "</div>";
-
-            // Render blogAddState message
-            switch ($_SESSION['blogAddState']) {
-
-                case $_SESSION['SUCCESS']:
-                    // set cookie reflecting add success
-                    setcookie("ckBlogAddState", $_SESSION['SUCCESS']);
-                    break;
-
-                case $_SESSION['ADD_FAILED']:
-                    // set cookie reflecting add failed
-                    setcookie("ckBlogAddState", $_SESSION['ADD_FAILED']);
-                    break;
-            
-                case $_SESSION['START']:
-                    break;
-
-                default:
-                    break;
-            }
+            // echo "<div class='form-msg failed'>" . $_SESSION['ADD_RECORD_FAILED'] . "</div>";
 
             $log->LogDebug("BlogPage.php: blogAddState = " . $_SESSION['blogAddState'] . "\n------------------");
         ?>
