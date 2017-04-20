@@ -15,6 +15,7 @@ $_SESSION['postText'] = htmlentities($_POST['postText']);
 if($dao->addBlogPost($_SESSION['userEmail'], $_SESSION['userName'], $_SESSION['postText'], $_SESSION['postLikes'], $_SESSION['postNotLikes'])) {
     $log->LogDebug("BlogHandler: New blogpost successfully added.");
     $_SESSION['blogAddState'] = $_SESSION['SUCCESS'];
+    $_SESSION['postText'] = ""; // unset input field
 } else {
     $log->LogDebug("addUser: New user add failed.");
     $_SESSION['blogAddState'] = $_SESSION['ADD_FAILED'];

@@ -21,7 +21,7 @@ $(function() {      // Validate inputs
 
         // Upon error, prevent submission of inputs to the database.
         if (userEmail == ""  ||  userPassword == ""  ||  userName == "") {
-            alert("You must enter something in each starred '*' input field.\n");
+            // alert("You must enter something in each starred '*' input field.\n");
             event.preventDefault();
         }
     });
@@ -70,7 +70,7 @@ function resetAddState(cname) {
    
     // var state = getCookie(cname);
     var state = Cookies.get(cname);
-    alert("Cookies.get() value: " + state);
+    // alert("Cookies.get() value: " + state);
    
     var START = 0;
     var SUCCESS = 1;
@@ -79,18 +79,18 @@ function resetAddState(cname) {
     switch (state) {
         case SUCCESS:
             $('.failed').hide();
-            alert("Add succeeded...");
+            // alert("Add succeeded...");
             $('.form-msg.succeeded').show();
             break;
 
         case FAILURE:
             $('.succeeded').hide();     
-            alert("Add failed...");   
+            // alert("Add failed...");   
             $('.form-msg.failed').show();
             break;
 
         case START:
-            alert ("START ... do nothing.");
+            // alert ("START ... do nothing.");
             $('.form-msg:visible').hide();            
             break;
 
@@ -100,7 +100,7 @@ function resetAddState(cname) {
     };
 
     Cookies.set(cname, START, { expires : 1 });
-    alert("resetAddState() : Cookies NEW value: " + Cookies.get(cname));
+    // alert("resetAddState() : Cookies NEW value: " + Cookies.get(cname));
 }
 
 

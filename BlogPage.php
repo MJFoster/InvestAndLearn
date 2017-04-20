@@ -20,7 +20,7 @@
             echo "<div class='form-msg succeeded'>". $_SESSION['ADD_RECORD_SUCCEEDED'] . "</div>";
             echo "<div class='form-msg failed'>" . $_SESSION['ADD_RECORD_FAILED'] . "</div>";
 
-
+            // Render blogAddState message
             switch ($_SESSION['blogAddState']) {
 
                 case $_SESSION['SUCCESS']:
@@ -48,7 +48,7 @@
         <div>Invest And Learn Blog</div>
 
         <ul>
-            <li>
+            <li>    <!-- TODO: Render new <li> for each entry retrieved from blog-->
                 <?php
                     $blogPostDate = "02-22-17";     // TODO:  Add from db
                     echo "<h3>Posted: $blogPostDate</h3>";
