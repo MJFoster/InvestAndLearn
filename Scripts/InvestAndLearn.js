@@ -3,7 +3,7 @@ $(function() {      // Validate inputs
     $('#logged-out-state').fadeOut(4000);
 
     // Fade away form messages
-    // $('.form-msg:visible').fadeOut(4000);
+    $('.form-msg:visible').fadeOut(4000);
 
     // Reset each add form cookies state and hide message on screen
     // TODO:  Implement remaining ck_____AddState cookies.
@@ -13,8 +13,8 @@ $(function() {      // Validate inputs
     // resetAddState("ckTestimonialAddState");
     
     // function to execute before 'submit' of any 'user-form' class element
+	// Gets email, password, and name if they exist.
     $(".user-form").submit(function(event) {
-        // get email, password, and name if they exist.
         var userEmail = $("#user-email").val();
         var userPassword = $("#user-password").val();
         var userName = $("#user-name").val();
@@ -34,203 +34,40 @@ function contactUs() {  // function called by 'Contact Us' <a> tag
 
 // Hide or show form message, depending on state, 
 // then reset cookie's state to START.
-// function resetAddState(cname) {
+function resetAddState(cname) {
    
-//     var state = Cookies.get(cname);
-//     // alert(cname + " CURRENT value: " + state);
+    var state = Cookies.get(cname);
+	console.log("InvestAndLearn.resetAddState():\nCookies.get(cname) -> " + state);
    
-//     var START = 0;
-//     var SUCCESS = 1;
-//     var FAILURE = -3
+    var START = 0;
+    var SUCCESS = 1;
+    var FAILURE = -3
 
-//     switch (state) {
-//         case SUCCESS:
-// 			// alert("SUCCESS message should show ...");
-//             // $('.failed').hide();
-//             $('.succeeded').show();
-//             break;
+    switch (state) {
+        case SUCCESS:
+			console.log("InvestAndLearn.resetAddState():\nSUCCESS message should show, failed message should hide ... case SUCCESS (1), State = " + state);
+            $('.failed:visible').hide();
+            $('.succeeded:hidden').show();
+            break;
 
-//         case FAILURE:
-// 			// alert("FAIL message should show ...");
-//             $('.succeeded').hide();     
-//             // $('.failed').show();
-//             break;
+        case FAILURE:
+			console.log("InvestAndLearn.resetAddState():\nADD FAILED message should show, succeeded message should hide ... case ADD FAILED (-3), State = " + state);
+            $('.succeeded:visible').hide();     
+            $('.failed:hidden').show();
+            break;
 
-//         default:
-//             break;
-//     };
+		case START:
+			console.log("InvestAndLearn.resetAddState():\nNO MESSAGE s/b rendered since state s/b START ... case START (0), State = " + state);
+			break;
 
-// 	Cookies.set(cname, '');
-//     Cookies.set(cname, '0');
-// 	state = Cookies.get(cname);
-// 	// alert(cname + " s/b (0), value: " + state);
-// }
+        default:
+            break;
+    };
 
+	// Re-set cookie to START state
+	Cookies.set(cname, '');
+    Cookies.set(cname, '0');
+	state = Cookies.get(cname);
+	console.log("InvestAndLearn.resetAddState():\nState just RESET s/b (0) ... State = " + state);
 
-
-
-/*!
- * JavaScript Cookie v2.1.4
- * https://github.com/js-cookie/js-cookie
- *
- * Copyright 2006, 2015 Klaus Hartl & Fagner Brack
- * Released under the MIT license
- */
-;(function (factory) {
-	var registeredInModuleLoader = false;
-	if (typeof define === 'function' && define.amd) {
-		define(factory);
-		registeredInModuleLoader = true;
-	}
-	if (typeof exports === 'object') {
-		module.exports = factory();
-		registeredInModuleLoader = true;
-	}
-	if (!registeredInModuleLoader) {
-		var OldCookies = window.Cookies;
-		var api = window.Cookies = factory();
-		api.noConflict = function () {
-			window.Cookies = OldCookies;
-			return api;
-		};
-	}
-}(function () {
-	function extend () {
-		var i = 0;
-		var result = {};
-		for (; i < arguments.length; i++) {
-			var attributes = arguments[ i ];
-			for (var key in attributes) {
-				result[key] = attributes[key];
-			}
-		}
-		return result;
-	}
-
-	function init (converter) {
-		function api (key, value, attributes) {
-			var result;
-			if (typeof document === 'undefined') {
-				return;
-			}
-
-			// Write
-
-			if (arguments.length > 1) {
-				attributes = extend({
-					path: '/'
-				}, api.defaults, attributes);
-
-				if (typeof attributes.expires === 'number') {
-					var expires = new Date();
-					expires.setMilliseconds(expires.getMilliseconds() + attributes.expires * 864e+5);
-					attributes.expires = expires;
-				}
-
-				// We're using "expires" because "max-age" is not supported by IE
-				attributes.expires = attributes.expires ? attributes.expires.toUTCString() : '';
-
-				try {
-					result = JSON.stringify(value);
-					if (/^[\{\[]/.test(result)) {
-						value = result;
-					}
-				} catch (e) {}
-
-				if (!converter.write) {
-					value = encodeURIComponent(String(value))
-						.replace(/%(23|24|26|2B|3A|3C|3E|3D|2F|3F|40|5B|5D|5E|60|7B|7D|7C)/g, decodeURIComponent);
-				} else {
-					value = converter.write(value, key);
-				}
-
-				key = encodeURIComponent(String(key));
-				key = key.replace(/%(23|24|26|2B|5E|60|7C)/g, decodeURIComponent);
-				key = key.replace(/[\(\)]/g, escape);
-
-				var stringifiedAttributes = '';
-
-				for (var attributeName in attributes) {
-					if (!attributes[attributeName]) {
-						continue;
-					}
-					stringifiedAttributes += '; ' + attributeName;
-					if (attributes[attributeName] === true) {
-						continue;
-					}
-					stringifiedAttributes += '=' + attributes[attributeName];
-				}
-				return (document.cookie = key + '=' + value + stringifiedAttributes);
-			}
-
-			// Read
-
-			if (!key) {
-				result = {};
-			}
-
-			// To prevent the for loop in the first place assign an empty array
-			// in case there are no cookies at all. Also prevents odd result when
-			// calling "get()"
-			var cookies = document.cookie ? document.cookie.split('; ') : [];
-			var rdecode = /(%[0-9A-Z]{2})+/g;
-			var i = 0;
-
-			for (; i < cookies.length; i++) {
-				var parts = cookies[i].split('=');
-				var cookie = parts.slice(1).join('=');
-
-				if (cookie.charAt(0) === '"') {
-					cookie = cookie.slice(1, -1);
-				}
-
-				try {
-					var name = parts[0].replace(rdecode, decodeURIComponent);
-					cookie = converter.read ?
-						converter.read(cookie, name) : converter(cookie, name) ||
-						cookie.replace(rdecode, decodeURIComponent);
-
-					if (this.json) {
-						try {
-							cookie = JSON.parse(cookie);
-						} catch (e) {}
-					}
-
-					if (key === name) {
-						result = cookie;
-						break;
-					}
-
-					if (!key) {
-						result[name] = cookie;
-					}
-				} catch (e) {}
-			}
-
-			return result;
-		}
-
-		api.set = api;
-		api.get = function (key) {
-			return api.call(api, key);
-		};
-		api.getJSON = function () {
-			return api.apply({
-				json: true
-			}, [].slice.call(arguments));
-		};
-		api.defaults = {};
-
-		api.remove = function (key, attributes) {
-			api(key, '', extend(attributes, {
-				expires: -1
-			}));
-		};
-
-		api.withConverter = init;
-
-		return api;
-	}
-
-	return init(function () {});
-}));
+}
