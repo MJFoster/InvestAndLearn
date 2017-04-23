@@ -72,7 +72,7 @@
     public function getBlogPosts() {
         $this->log->LogDebug("getBlogPosts: Searching for blogpost records ...");
         $conn = $this->getConnection();
-        $queryString = "select * from blogpost;";
+        $queryString = "select * from blogpost order by Post_Date desc;";
         return $conn->query($queryString);  // PDO statement object returned if found, else 'false'.
     }
 
