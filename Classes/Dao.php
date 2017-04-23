@@ -24,16 +24,12 @@
 
 
     public function getConnection () {
-      $this->log->LogDebug("getConnection: Attempting database connection...");
       try {
-        $conn = new PDO("mysql:host={$this->host};dbname={$this->db}", $this->user,
-              $this->pass);
+        $conn = new PDO("mysql:host={$this->host};dbname={$this->db}", $this->user, $this->pass);
       } catch (Exception $e) {
         $this->log->LogFatal($e);
         exit;
       }
-
-      $this->log->LogDebug("getConnection: Success, database connected!");
       return $conn;
     }
 
@@ -43,7 +39,6 @@
     * If found, return query result in an associative array, else false.
     */
     public function getUser ($email) {
-      $this->log->LogDebug("getUser: Searching for email in database..." . $email);
       $conn = $this->getConnection();
       $queryString = "select User_Name, User_Email, User_Password, User_Access from user where User_Email='" . $email . "';";
       return $conn->query($queryString);     // PDO Statement object returned if found, else 'false'.
@@ -63,17 +58,16 @@
       $q->bindParam(":userPassword", $userPassword);
       $q->bindParam(":userAccess", $userAccess);
       if ( $q->execute() ) {
-        $this->log->LogDebug("addUser: User added.");
         return true;
       } else {
-        $this->log->LogDebug("addUser: User email already used, please enter a different user email.");
+        $this->log->LogDebug("addUser: User email already taken, email must be distinct.");
         return false;
       }
     }
 
 
     /* Searches 'blogpost' table for all blogPost records.
-    *  Returnsall records in an associative array, or false if none found.
+    *  Returns all records in an associative array, or false if none found.
     */
     public function getBlogPosts() {
         $this->log->LogDebug("getBlogPosts: Searching for blogpost records ...");
@@ -94,7 +88,7 @@
       $q->bindParam(":postEmail", $postEmail);
       $q->bindParam(":postName", $postName);
       $q->bindParam(":postText", $postText);
-      if ( $q->execute() ) {  // Execute MySQL call, returns true on success, else false.
+      if ( $q->execute() ) {          // Execute MySQL call, returns true on success, else false.
         $this->log->LogDebug("addBlogPost: Blogpost Added.");
         return true;
       } else {

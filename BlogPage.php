@@ -1,49 +1,30 @@
 <?php
     include("Header.php");
     $thisPage = "Blog-Page";
-
-    $log = new KLogger("tmp/log.txt", KLogger::DEBUG);
-
-    if ( !isset($_SESSION['blogAddState'] )) {
-        $_SESSION['blogAddState'] = $_SESSION['START'];
-    }
-
-    // Set cookie for blogAddState message
-    echo "<pre>blogAddState: "; print_r($_SESSION['blogAddState']); echo " </pre>";
-    switch ($_SESSION['blogAddState']) {
-
-        case $_SESSION['SUCCESS']:
-            setcookie("ckBlogAddState", $_SESSION['SUCCESS']);
-            echo ("BlogAddPage: case blogAddState SUCCESS (1) = " + $_SESSION['blogAddState']);
-            break;
-
-        case $_SESSION['ADD_FAILED']:
-            setcookie("ckBlogAddState", $_SESSION['ADD_FAILED']);
-            break;
-    
-        case $_SESSION['START']:
-            setcookie("ckBlogAddState", $_SESSION['START']);
-            break;
-
-        default:
-            break;
-    }
-
-
 ?>
 
 <div class="main-content dark-purple-text">
     <div class="messages">
         <?php
             
-            if($_SESSION['loginState'] == $_SESSION['SUCCESS']) {
-                echo "<button id='add-blog-button' class='buttons'><span><a href='BlogForm.php'>Add New Blog Post</a></span></button>";
+            if ($_SESSION['loginState'] == $_SESSION['SUCCESS']) {
+                echo "<button id='add-blog-button' class='buttons'>
+                      <span><a href='BlogForm.php'>Add New Blog Post</a></span>
+                      </button>";
             }
 
-            echo "<div class='form-msg succeeded' hidden>". $_SESSION['ADD_RECORD_SUCCEEDED'] . "</div>";
-            echo "<div class='form-msg failed' hidden>" . $_SESSION['ADD_RECORD_FAILED'] . "</div>";
+            // IFF blogAddState is set, render a message and reset state.
+            if (isset($_SESSION['blogAddState'])) {
+                // State is set, so an attempt to add has occurred. Rendering either success or failure message.
+                if ($_SESSION['blogAddState'] === $_SESSION['SUCCESS']) {
+                    echo "<div class='form-msg succeeded'>". $_SESSION['ADD_RECORD_SUCCEEDED'] . "</div>";
+                } else {
+                    echo "<div class='form-msg failed'>" . $_SESSION['ADD_RECORD_FAILED'] . "</div>";
+                };
 
-            $log->LogDebug("BlogPage.php: blogAddState = " . $_SESSION['blogAddState'] . "\n------------------");
+                // UNset blogAddState from here.
+                unset($_SESSION['blogAddState']);
+            }  // Initial / reset state renders NO MESSAGE.
         ?>
     </div>
 
@@ -96,8 +77,8 @@
                 ?>
             </li>
         </ul>
-    </div>
-</div>
+    </div>  <!-- END .content-container -->
+</div>  <!-- END .main-content -->
 
 <?php
     include("Footer.php");

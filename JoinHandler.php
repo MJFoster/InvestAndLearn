@@ -18,7 +18,6 @@ $_SESSION['userPassword'] = htmlentities($_POST['userPassword']);
 // if loginState != LOGGED_OUT, proceed, else redirect to index.php
 if($_SESSION['loginState'] != $_SESSION['LOGGED_OUT']) {
     if($dao->addUser($_SESSION['userName'], $_SESSION['userPassword'], $_SESSION['userEmail'])) {
-        $log->LogDebug("addUser: New user successfully added.");
         $_SESSION['loginState'] = $_SESSION['SUCCESS'];
     } else {
         $log->LogDebug("addUser: New user add failed.");

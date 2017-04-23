@@ -1,6 +1,6 @@
 <!-- All constants for site are below. -->
 <?php
-    $_SESSION['START'] = 0;
+    $_SESSION['START'] = 0;		// TODO:  Remove if not used since UNSET = 'start'.  Use '0' for 'ADD-FAILED'?
 	$_SESSION['SUCCESS'] = 1;
 	$_SESSION['PASSWORD_FAILED'] = -1;
 	$_SESSION['EMAIL_FAILED'] = -2;	

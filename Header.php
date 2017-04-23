@@ -24,12 +24,9 @@
 	
 	$_SESSION['lastActivity'] = time();
 
-	$log->LogDebug("Header.php: Last Activity: " . $_SESSION['lastActivity'] . "\n------------------");
-
-	// Initialize START states
+	// Initialize START state as UNset
 	if (!isset($_SESSION['loginState'])) {
 		$_SESSION['loginState'] = $_SESSION['START'];
-		$log->LogDebug("Header.php: Initializing loginState to: " . $_SESSION['loginState'] . "\n------------------");
 	}
 
 ?>
@@ -42,7 +39,6 @@
 	<link rel="stylesheet" href="Styles/font-awesome-4.7.0/css/font-awesome.min.css">
 	<link rel="icon" type="image/x-icon" href="Images/favicon.png">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="Scripts/js.cookie.js"></script>
 	<script type="text/javascript" src="Scripts/InvestAndLearn.js"></script>
 </head>
 
@@ -84,7 +80,6 @@
 			// 	echo "<a href='LoginForm.php' id='timed-out-state' class='dark-purple-text login-state-msg'>*** Timed Out, Please Login Again</a>";
 			// 	$_SESSION['loginState'] = $_SESSION['START'];
 			// }
-			$log->LogDebug("Header.php: End of page loginState : " . $_SESSION['loginState'] . "\n------------------");
 		?>
 	</nav>
 

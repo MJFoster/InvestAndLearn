@@ -13,14 +13,12 @@ $log = new KLogger("tmp/log.txt", KLogger::DEBUG);
 $_SESSION['postText'] = htmlentities($_POST['postText']);
 
 if($dao->addBlogPost($_SESSION['userEmail'], $_SESSION['userName'], $_SESSION['postText'], $_SESSION['postLikes'], $_SESSION['postNotLikes'])) {
-    $log->LogDebug("BlogHandler: New blogpost successfully added.");
-    $_SESSION['blogAddState'] = $_SESSION['SUCCESS'];
+    $_SESSION['blogAddState'] = $_SESSION['SUCCESS'];   // set blogAddState to success
     $_SESSION['postText'] = ""; // unset input field
 } else {
-    $log->LogDebug("addUser: New user add failed.");
+    $log->LogDebug("addUser: New user add failed." . "------------------");    // blogAddState remains UN-SET
     $_SESSION['blogAddState'] = $_SESSION['ADD_FAILED'];
 }
-$log->LogDebug("------------------");
 
 header("Location:BlogPage.php");
 exit;
