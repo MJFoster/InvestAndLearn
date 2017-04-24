@@ -1,10 +1,11 @@
 <?php
     $thisPage = "Testimonials-Page";
-	$currentPage = $thisPage;
+	$mainNav = true;
+
     include("Header.php");
 ?>
 
-<div class="main-content">
+<div class="main-content simple-border">
 	<div class="content-container">
 		<div class="dark-purple-text">Members Speak Out ...</div>
 		<ul class="dark-purple-text scrollable">

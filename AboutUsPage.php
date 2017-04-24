@@ -1,9 +1,10 @@
 <?php
-    include("Header.php");
     $thisPage = "About-Us-Page";
+    include("Header.php");
+    $mainNav = false;
 ?>
 
-<div class="main-content dark-purple-text">
+<div class="main-content dark-purple-text simple-border">
 	<div id="about-us-container">
         <div>Who We Are</div>
         <p>

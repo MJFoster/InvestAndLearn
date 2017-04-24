@@ -1,15 +1,29 @@
 <?php
-    include("Header.php");
     $thisPage = "Learn-Page";
+    include("Header.php");
+    $mainNav = true;
 ?>
 
-<div class="main-content dark-purple-text">
+<!--TODO:  Implement <figure> and <figcaption> tags on <img> elements in LearnPage.php-->
+<div class="main-content dark-purple-text simple-border">
 	<div id="learn-container">
         <div>Learn To Grow Your Money!</div>
         <ul id="learn-subjects">
-            <li><img src="#"><a href="#"></a></img></li>
-            <li><img src="#"><a href="#"></a></img></li>
-            <li><img src="#"><a href="#"></a></img></li>
+            <li>
+                <a href="https://www.scottrade.com/knowledge-center/investment-education/investment-products.html" target="_blank">
+                    <img src="Images/Chalkboard_Ideas.jpg" class="simple-border"/>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.scottrade.com/knowledge-center/investment-education/learn-the-basics.html" target="_blank">
+                    <img src="Images/Growth.jpg" class="simple-border"/>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.scottrade.com/knowledge-center/investment-education/retirement.html" target="_blank">
+                    <img src="Images/Retirement_Planning.jpg" class="simple-border"/>
+                </a>
+            </li>
         </ul>
     </div>
 </div>

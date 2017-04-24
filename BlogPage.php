@@ -1,6 +1,7 @@
 <?php
-    include("Header.php");
     $thisPage = "Blog-Page";
+    include("Header.php");
+    $mainNav = true;
 
     require_once 'Classes/Dao.php';
     require_once 'Classes/KLogger.php';
@@ -9,7 +10,7 @@
     $log = new KLogger("tmp/log.txt", KLogger::DEBUG);
 ?>
 
-<div class="main-content dark-purple-text">
+<div class="main-content dark-purple-text simple-border">
     <div class="messages">
         <?php
             

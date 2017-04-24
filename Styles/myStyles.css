@@ -1,4 +1,9 @@
 /* * * * * * * General Styles * * * * * * */
+p {
+    font-family: "Droid Sans","Helvetica Neue", Helvetica , Arial, sans-serif;
+    line-height: 15px;
+    font-size: 13px;
+}
 
 .white-text {
     color: white !important;
@@ -36,22 +41,22 @@
     background-color: #11CFFA;
 }
 
+.simple-border {
+    border:  1px solid black;
+}
+
 .nav-fonts {
-    font-size: 105%;
+    font-size: 110%;
 }
 
-nav a {
+button, input[type=submit], a, ul a {
     text-decoration: none;
-}
-
-.images {
-    border: 3px solid black;
+    cursor: pointer;
 }
 
 .main-content {
     width: 100%;
     height: 78%;
-    border: 1px solid black;
 }
 
 .main-content ul {
@@ -71,7 +76,7 @@ nav a {
 }
 
 #current-page {
-    text-decoration: underline;
+    font-weight: 800;
 }
 
 .buttons {
@@ -116,11 +121,15 @@ nav a {
     color: red;
 }
 
+.input-requirements {
+    margin-top: 3%;
+}
+
+
 /* * * * * * * Top Banner * * * * * * */
 #banner {
     width:  100%;
     height: 10%;
-    border: 1px solid black;
 }
 
 #banner-logo {
@@ -141,7 +150,7 @@ nav a {
 }
 
 #banner-nav {
-    width: 32%;
+    width: 36%;
     margin: 0.5% 1% 4% 0.5%;
     float: right;
     text-align: right;
@@ -150,7 +159,6 @@ nav a {
 /* * * * * * * Main Menu Below Banner * * * * * * */
 #main-menu-nav {
     width: 64%;
-    border: 1px solid black;
     height: 5%;
     padding: 0.5% 0% 0% 36%;
 }
@@ -167,6 +175,18 @@ nav a {
 /* * * * * * * Contact Us Modal * * * * * * */
 
 /* * * * * * * Member Login Modal * * * * * * */
+#login-form {
+    width: 50%;
+    padding-left: 25%;
+    padding-top: 5%;
+}
+
+/* * * * * * * Member Join Modal * * * * * * */
+#join-form {
+    width: 80%;
+    padding-left: 10%;
+    padding-top: 5%;
+}
 
 /* * * * * * * About Us Page * * * * * * */
 #about-us-container {
@@ -184,6 +204,7 @@ nav a {
     width: 60%;
     height: 99%;
     float: left;
+    border: 3px solid black;
 }
 
 #home-page-content {
@@ -228,25 +249,23 @@ nav a {
     margin: 2% 10%;
 }
 
-#learn-container li {
+#learn-container img {
     float: left;
-    border: 1px solid black;
     height: 25%;
     width: 15%;
     margin: 2% 5%;
 }
 
+
 /* * * * * * * Calendar Page * * * * * * */
 #calendar {
     width: 100%;
-    border: 1px solid black;
     border-collapse: collapse;
 }
 
 #calendar th, #calendar td {
     width: 14%;
     height: 75px;
-    border: 1px solid black;
 }
 
 #calendar td {
@@ -265,7 +284,6 @@ nav a {
 footer {
     width:100%;
     height: 5%;
-    border:  1px solid black;
 }
 
 #copyright {

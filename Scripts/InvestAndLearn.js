@@ -5,8 +5,8 @@ $(function() {      // Validate inputs
     // Fade away form messages
     $('.form-msg:visible').fadeOut(4000);
     
-    // function to execute before 'submit' of any 'user-form' class element
-	// Gets email, password, and name if they exist.
+    // Before 'submit' of any 'user-form' class element,
+	// confirm email, password, and name are not empty.
     $(".user-form").submit(function(event) {
         var userEmail = $("#user-email").val();
         var userPassword = $("#user-password").val();
@@ -19,9 +19,11 @@ $(function() {      // Validate inputs
         }
     });
 
+
 });
 
-function contactUs() {  // function called by 'Contact Us' <a> tag
-    alert("Invest And Learn\n123Main Street\nBoise, ID  83702\n");
+// Called from 'Contact Us' anchor tag for information.
+function contactUs() {
+    alert("\n\n\t\tYou Can Find Us At...\n\nInvest And Learn\n123Main Street\nBoise, ID  83702\n");
 };
 

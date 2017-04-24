@@ -1,18 +1,19 @@
 <?php
-    include("Header.php");
     $thisPage = "Calendar-Page";
+    include("Header.php");
+    $mainNav = true;
 ?>
 
-<div class="main-content dark-purple-text">
-    <table id="calendar" class="purple-background">
+<div class="main-content dark-purple-text simple-border">
+    <table id="calendar" class="purple-background simple-border">
         <tr>
-            <th>Sunday</th>
-            <th>Monday</th>
-            <th>Tuesday</th>
-            <th>Wednesday</th>
-            <th>Thursay</th>
-            <th>Friday</th>
-            <th>Saturday</th>
+            <th class="simple-border">Sunday</th>
+            <th class="simple-border">Monday</th>
+            <th class="simple-border">Tuesday</th>
+            <th class="simple-border">Wednesday</th>
+            <th class="simple-border">Thursay</th>
+            <th class="simple-border">Friday</th>
+            <th class="simple-border">Saturday</th>
         </tr>
             <?php
                 $day = 1;
@@ -20,10 +21,10 @@
                     echo "<tr>";
                     for($day; $day <= 7*$week; $day++) {
                         if($day <= 31) {
-                            echo "<td>$day</td>";
+                            echo "<td class='simple-border'>$day</td>";
                         }
                         else {
-                            echo "<td></td>";
+                            echo "<td class='simple-border'></td>";
                         }
                     }
                     echo "</tr>";

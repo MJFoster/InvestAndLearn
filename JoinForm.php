@@ -1,4 +1,5 @@
 <?php
+    $thisPage = "Join-Page";
     include("Header.php");
 ?>
     <div>
@@ -39,6 +40,7 @@
                     name="userPassword" required>
 
                 <input id="add-form-submit" type="submit">
+                <div class="input-requirements">* Required fields</div>
             </div>
         </form>
 

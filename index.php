@@ -1,12 +1,12 @@
 <?php
 	$thisPage = "Home-Page";
-	$currentPage = $thisPage;
+	$mainNav = true;
 
     include("Header.php");
 ?>
 
-<div class="main-content black-text">
-    <img class="images" id="home-page-image" src="Images/blue-$$$.jpg" alt="Stacked Money">
+<div class="main-content black-text simple-border">
+    <img id="home-page-image" src="Images/blue-$$$.jpg" alt="Stacked Money"/>
 	<div>
 		<div id="home-page-content" class="dark-purple-text">
 			<p>

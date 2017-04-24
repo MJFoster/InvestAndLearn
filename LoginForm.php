@@ -1,9 +1,10 @@
 <!-- Form used for login of users. -->
 <?php
+    $thisPage = "Login-Page";
     include("Header.php");
 ?>
     <div>
-        <legend>User Login Form</legend>
+        <!-- TODO:  Create modal form with <legend>User Login Form</legend> element -->
         <form class="get-form user-form" id="login-form" method="POST" action="LoginHandler.php">
             <div class="form-inputs">
 
@@ -30,6 +31,7 @@
                     name="userPassword" required>
 
                 <input id="login-form-submit" type="submit">
+                <div class="input-requirements">* Required fields</div>
             </div>
         </form>
 
