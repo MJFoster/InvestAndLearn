@@ -13,25 +13,18 @@
                     placeholder="Enter Email "
                     <?php
                         if (isset($_SESSION['userEmail'])) {
-                            echo "value='" . $_SESSION['userEmail'] . "'";
+                            echo 'value="' . $_SESSION['userEmail'] . '"';
                         }
                     ?>
                     name="userEmail" required>
 
                 <!-- Validate Password: Alphanumeric, no special chars, 5-10 chars inclusive permitted. -->
                 <label for="user-password" class="required">* Password :  </label>
-                <input id="user-password" type="text" pattern="<?php echo $_SESSION['PASSWORD_PATTERN']; ?>"
-                    placeholder="5-10 alpha-numeric chars)" 
-                    <?php
-                        if (isset($_SESSION['userPassword'])) {
-                            echo "value='" . $_SESSION['userPassword'] . "'";
-                        }
-                    ?>
-
+                <input id="user-password" type="password" pattern="<?php echo $_SESSION['PASSWORD_PATTERN']; ?>"
                     name="userPassword" required>
 
                 <input id="login-form-submit" type="submit">
-                <div class="input-requirements">* Required fields</div>
+                <div class="input-requirements">* Required fields, password are 5-10 alpha-numeric chars</div>
             </div>
         </form>
 
@@ -43,15 +36,17 @@
                 break;
 
             case $_SESSION['EMAIL_FAILED']:
-                echo "<div>"
+                echo "<div class='form-error-message'>"
                 . $_SESSION['EMAIL_FAILED_MSG']
                 . "</div>";
+                $_SESSION['loginState'] = $_SESSION['START'];
                 break;
 
             case $_SESSION['PASSWORD_FAILED']:
-                echo "<div>"
+                echo "<div class='form-error-message'>"
                 . $_SESSION['PASSWORD_FAILED_MSG']
                 . "</div>";
+                $_SESSION['loginState'] = $_SESSION['START'];
                 break;
 
             case $_SESSION['START']:

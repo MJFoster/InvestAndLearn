@@ -131,6 +131,12 @@ button, input[type=submit], a, ul a {
     color: red;
 }
 
+.form-error-message {
+    width: 30%;
+    padding-left: 30%;
+    color: red;
+}
+
 .input-requirements {
     margin-top: 3%;
 }

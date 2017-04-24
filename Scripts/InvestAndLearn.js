@@ -3,7 +3,8 @@ $(function() {      // Validate inputs
     $('#logged-out-state').fadeOut(4000);
 
     // Fade away form messages
-    $('.form-msg:visible').fadeOut(4000);
+    $('.form-msg:visible').fadeOut(6000);
+    $('.form-error-message:visible').fadeOut(6000);
     
     // Before 'submit' of any 'user-form' class element,
 	// confirm email, password, and name are not empty.

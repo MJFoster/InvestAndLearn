@@ -29,8 +29,7 @@
 
                 <!-- Validate Password: Alphanumeric, no special chars, 5-10 chars inclusive permitted. -->
                 <label for="user-password" class="required">* Password :  </label>
-                <input id="user-password" type="text" pattern="<?php echo $_SESSION['PASSWORD_PATTERN']; ?>"
-                    placeholder="5-10 alpha-numeric chars)" 
+                <input id="user-password" type="password" pattern="<?php echo $_SESSION['PASSWORD_PATTERN']; ?>"
                     <?php
                         if (isset($_SESSION['userPassword'])) {
                             echo 'value="' . $_SESSION["userPassword"] . '"';
@@ -40,7 +39,7 @@
                     name="userPassword" required>
 
                 <input id="add-form-submit" type="submit">
-                <div class="input-requirements">* Required fields</div>
+                <div class="input-requirements">* Required fields, password are 5-10 alpha-numeric chars</div>
             </div>
         </form>
 
@@ -52,9 +51,10 @@
                 break;
                 
             case $_SESSION['ADD_FAILED']:
-                echo "<div>JoinForm: ..."
+                echo "<div class='form-error-message'>JoinForm: ..."
                 . $_SESSION['ADD_RECORD_FAILED']
                 . "</div>";
+                $_SESSION['loginState'] = $_SESSION['START'];
                 break;
 
             case $_SESSION['EMAIL_FAILED']:
