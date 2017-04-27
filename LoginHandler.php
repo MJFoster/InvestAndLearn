@@ -17,6 +17,22 @@ if (isset($_SESSION['userAccess'])) { unset($_SESSION['userAccess']);}
 $_SESSION['userEmail'] = htmlentities($_POST['userEmail']);
 $_SESSION['userPassword'] = htmlentities($_POST['userPassword']);
 
+
+
+// Check for availability of the SHA256 encryption method on user's browser.
+// If available, encrypt with it by using a salt string.
+if (CRYPT_SHA256 == 1) {
+    $saltStr = "$5$saltMJ$";
+    $hashedPswd = crypt($_SESSION['userPassword'], $saltStr);
+    // Save in db as ... $hashedPswd.
+    // Below, when comparing passwords for successful login, compare what's saved in the db
+    // which is a 'hash' of the original password, against the hash of the <input>
+    // ... use this function .... password_verify($_SESSION['userPassword'], $hashedPswd);
+};
+
+
+
+
 $users = $dao->getUser($_SESSION['userEmail']);
 $count = $users->rowCount();
 if ( $count == 0 ) { // No user found at that email
