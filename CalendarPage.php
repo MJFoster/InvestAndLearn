@@ -1,5 +1,6 @@
 <?php
     $thisPage = "Calendar-Page";
+    include_once("analyticstracking.php");
     include("Header.php");
     $mainNav = true;
 ?>

@@ -1,5 +1,7 @@
 <?php
     $thisPage = "About-Us-Page";
+
+   	include_once("analyticstracking.php");
     include("Header.php");
     $mainNav = false;
 ?>

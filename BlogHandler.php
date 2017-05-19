@@ -3,6 +3,8 @@
 
 session_start();
 
+include_once("analyticstracking.php");
+
 require_once 'Classes/Dao.php';
 require_once 'Classes/KLogger.php';
 

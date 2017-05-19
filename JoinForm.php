@@ -1,5 +1,7 @@
 <?php
     $thisPage = "Join-Page";
+    
+    include_once("analyticstracking.php");
     include("Header.php");
 ?>
     <div>

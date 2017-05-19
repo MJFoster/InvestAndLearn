@@ -1,6 +1,7 @@
 <!-- Form used for login of users. -->
 <?php
     $thisPage = "Login-Page";
+   	include_once("analyticstracking.php");
     include("Header.php");
 ?>
     <div>

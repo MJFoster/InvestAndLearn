@@ -2,6 +2,7 @@
     $thisPage = "Testimonials-Page";
 	$mainNav = true;
 
+   	include_once("analyticstracking.php");
     include("Header.php");
 ?>
 
