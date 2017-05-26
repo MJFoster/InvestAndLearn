@@ -39,8 +39,7 @@
     <div class="content-container">
         <div>Invest And Learn Blog</div>
 
-        <ul>
-
+        <ul class="dark-purple-text scrollable">
             <?php  // Collect all existing blog posts and santize them.
                 $blogPosts = $dao->getBlogPosts();
                 if ($blogPosts->rowCount() <= 0) {
@@ -51,57 +50,10 @@
                     $postText = htmlentities($blogPost['Post_Text']);
                     $blogPostAuthor = htmlentities($blogPost['Post_Name']);
                     echo "<li><h3>Posted: " . $postDate . "</h3>"
-                        . "<p class=\'testimonials-text scrollable\'>$postText</p>"
+                        . "<p class=\'testimonials-text\'>$postText</p>"
                         . "<p id=\"blog-author\">- $blogPostAuthor</p></li>";
                 }
             ?>
-
-
-
-            <!--<li>    <!-- TODO: Render new <li> for each entry retrieved from blog-->
-                <!--<?php
-                    // $blogPostDate = "02-22-17";     // TODO:  Add from db
-                    // echo "<h3>Posted: $blogPostDate</h3>";-->
-
-                    // TODO:  Add from db                    
-                //     $blogPostText = "Blog content from the database goes here 
-                //     ...  Blog content from the database goes here
-                //     ...  Blog content from the database goes here 
-                //     ...  Blog content from the database goes here 
-                //     ...  Blog content from the database goes here 
-                //     ...  Blog content from the database goes here 
-                //     ...  Blog content from the database goes here 
-                //     ...  Blog content from the database goes here 
-                //     ...  Blog content from the database goes here 
-                //     ...  Blog content from the database goes here 
-                //     ...  Blog content from the database goes here 
-                //     ...  Blog content from the database goes here 
-                //     ...  Blog content from the database goes here 
-                //     ...  Blog content from the database goes here 
-                //     ...  Blog content from the database goes here 
-                //     ...  Blog content from the database goes here 
-                //     ...  Blog content from the database goes here 
-                //     ...  Blog content from the database goes here 
-                //     ...  Blog content from the database goes here 
-                //     ...  Blog content from the database goes here 
-                //     ...  Blog content from the database goes here 
-                //     ...  Blog content from the database goes here 
-                //     ...  Blog content from the database goes here 
-                //     ...  Blog content from the database goes here 
-                //     ...  Blog content from the database goes here 
-                //     ...  Blog content from the database goes here 
-                //     ...  Blog content from the database goes here 
-                //     ...  Blog content from the database goes here 
-                //     ...  Blog content from the database goes here 
-                //     ...  Blog content from the database goes here 
-                //     ...  Blog content from the database goes here 
-                //     ...  Blog content from the database goes here ";
-                //     echo "<p class=\"testimonials-text scrollable\">$blogPostText</p>";   
-                    
-                //     $blogPostAuthor = "Mickey Mouse";       // TODO:  Add from db
-                //     echo "<p id=\"blog-author\">- $blogPostAuthor</p>";
-                // ?>
-            </li>-->
         </ul>
     </div>  <!-- END .content-container -->
 </div>  <!-- END .main-content -->
