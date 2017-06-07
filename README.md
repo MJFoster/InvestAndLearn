@@ -1,6 +1,8 @@
 ## General Theme Of Site
 •	A space for collaboration and education for an investment club.
 
+## Published Site:  https://guarded-harbor-51686.herokuapp.com/BlogPage.php
+
 ## What The Site Does
 * Serves as an information portal for an investment club’s events.
 * Serves as an informational resource for learning to manage stocks.
